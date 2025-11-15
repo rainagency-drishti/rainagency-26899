@@ -8,26 +8,26 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Rain Brand Colors - Soft Mist Blue & Deep Ocean */
-    --background: 209 100% 93%;
-    --foreground: 215 66% 22%;
+    /* Rain Brand Colors - Dark Mode Primary */
+    --background: 215 66% 15%;
+    --foreground: 209 100% 93%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 66% 22%;
+    --card: 215 50% 12%;
+    --card-foreground: 209 100% 93%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 66% 22%;
+    --popover: 215 50% 12%;
+    --popover-foreground: 209 100% 93%;
 
-    /* Primary - Deep Ocean Blue */
+    /* Primary - Deep Ocean Blue (Main Brand) */
     --primary: 211 72% 26%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 209 100% 93%;
 
     /* Secondary - Midnight Navy */
     --secondary: 215 66% 22%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 209 100% 93%;
 
-    --muted: 209 50% 88%;
-    --muted-foreground: 211 40% 45%;
+    --muted: 215 40% 20%;
+    --muted-foreground: 209 30% 70%;
 
     --accent: 209 100% 88%;
     --accent-foreground: 215 66% 22%;
@@ -35,59 +35,37 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 209 60% 85%;
-    --input: 209 60% 85%;
+    --border: 215 40% 25%;
+    --input: 215 40% 20%;
     --ring: 211 72% 26%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* Custom Design Tokens - Sophisticated Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(209 100% 93%) 0%, hsl(209 100% 88%) 50%, hsl(209 100% 93%) 100%);
-    --gradient-mesh: radial-gradient(at 0% 0%, hsl(211 72% 26% / 0.08) 0px, transparent 50%),
-                     radial-gradient(at 100% 0%, hsl(209 100% 88% / 0.15) 0px, transparent 50%),
-                     radial-gradient(at 100% 100%, hsl(211 72% 26% / 0.08) 0px, transparent 50%),
-                     radial-gradient(at 0% 100%, hsl(215 66% 22% / 0.1) 0px, transparent 50%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(209 100% 98%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(211 72% 26%) 0%, hsl(215 66% 22%) 100%);
-    --gradient-glow: linear-gradient(180deg, hsl(209 100% 88% / 0.3) 0%, transparent 100%);
+    /* Custom Design Tokens - Lunour Style */
+    --gradient-hero: linear-gradient(180deg, hsl(215 66% 15%) 0%, hsl(215 50% 12%) 100%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(211 72% 26% / 0.15) 0px, transparent 50%),
+                     radial-gradient(at 80% 80%, hsl(209 100% 88% / 0.08) 0px, transparent 50%);
+    --gradient-card: linear-gradient(135deg, hsl(215 50% 14%) 0%, hsl(215 40% 16%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(211 72% 26%) 0%, hsl(209 100% 88%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(209 100% 88%) 0%, hsl(0 0% 100%) 100%);
     
-    --shadow-soft: 0 4px 20px -2px hsl(211 72% 26% / 0.08);
-    --shadow-elevated: 0 20px 60px -10px hsl(211 72% 26% / 0.15);
-    --shadow-neon: 0 0 40px hsl(211 72% 26% / 0.2), 0 0 80px hsl(209 100% 88% / 0.3);
-    --shadow-glow: 0 4px 30px hsl(211 72% 26% / 0.12);
+    --shadow-soft: 0 2px 20px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 60px hsl(211 72% 26% / 0.4);
     
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 215 66% 15%;
+    --background: 215 66% 10%;
     --foreground: 209 100% 93%;
 
-    --card: 215 60% 18%;
+    --card: 215 50% 8%;
     --card-foreground: 209 100% 93%;
 
-    --popover: 215 60% 18%;
-    --popover-foreground: 209 100% 93%;
-
-    --primary: 209 100% 88%;
-    --primary-foreground: 215 66% 22%;
-
-    --secondary: 211 72% 35%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 215 40% 25%;
-    --muted-foreground: 209 30% 65%;
-
-    --accent: 211 72% 26%;
-    --accent-foreground: 209 100% 93%;
-
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 215 40% 30%;
-    --input: 215 40% 25%;
-    --ring: 209 100% 88%;
+    --primary: 211 72% 30%;
+    --secondary: 215 66% 18%;
   }
 }
 
@@ -128,6 +106,14 @@ All colors MUST be HSL.
   
   .animate-slide-in-right {
     animation: slide-in-right 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.8s ease-out forwards;
+  }
+
+  .animate-blur-in {
+    animation: blur-in 1s ease-out forwards;
   }
 
   @keyframes fade-in {
@@ -189,20 +175,41 @@ All colors MUST be HSL.
       transform: translateX(0);
     }
   }
-  
-  .glass-effect {
-    background: hsl(0 0% 100% / 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(211 72% 26% / 0.1);
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes blur-in {
+    from {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
   }
   
-  .neon-text {
-    text-shadow: 0 2px 10px hsl(211 72% 26% / 0.3);
+  .parallax {
+    transition: transform 0.1s ease-out;
   }
-  
-  .glow-border {
-    border: 1px solid hsl(211 72% 26% / 0.15);
-    box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.1),
-                0 2px 8px hsl(211 72% 26% / 0.08);
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
