@@ -8,7 +8,6 @@ import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useParallax } from "@/hooks/useParallax";
 import { supabase } from "@/integrations/supabase/client";
-import rainLogoHero from "@/assets/rain-logo-hero.png";
 
 interface Project {
   id: string;
@@ -61,13 +60,11 @@ const Home = () => {
 
         <div ref={heroRef} className="reveal container mx-auto px-6 py-32 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            <div className="mb-12 flex justify-center">
-              <img 
-                src={rainLogoHero} 
-                alt="RAIN" 
-                className="w-full max-w-2xl h-auto animate-scale-in"
-              />
-            </div>
+            <h1 className="text-8xl md:text-[12rem] font-display font-bold mb-8 leading-none tracking-tight">
+              <span className="block bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+                RAIN
+              </span>
+            </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
               We build brands for companies that aim to stand out
             </p>
