@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useParallax } from "@/hooks/useParallax";
 import { supabase } from "@/integrations/supabase/client";
-import rainLogoHero from "@/assets/rain-logo-hero.png";
+import rainLogo from "@/assets/rain-logo.png";
 
 interface Project {
   id: string;
@@ -63,8 +63,8 @@ const Home = () => {
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-12 flex justify-center">
               <img 
-                src={rainLogoHero} 
-                alt="RAIN - Digital-first strategy + design agency" 
+                src={rainLogo} 
+                alt="RAIN - Digital-first strategy + design agency"
                 className="w-full max-w-2xl h-auto animate-scale-in"
               />
             </div>

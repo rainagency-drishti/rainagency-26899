@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import rainLogo from "@/assets/rain-logo.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -15,8 +16,8 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-display tracking-wider text-primary hover:text-secondary transition-colors">
-            RAIN
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <img src={rainLogo} alt="RAIN" className="h-8" />
           </Link>
           
           <div className="flex gap-8">
