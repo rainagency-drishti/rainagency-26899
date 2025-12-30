@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MarqueeText from "@/components/MarqueeText";
+import RainEffect from "@/components/RainEffect";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Layers, Zap, Code, Palette, Globe } from "lucide-react";
@@ -95,6 +96,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <RainEffect />
       <Navigation />
 
       {/* Hero Section */}
