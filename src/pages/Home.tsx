@@ -2,11 +2,13 @@ import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import FloatingOrbs from "@/components/FloatingOrbs";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import MarqueeText from "@/components/MarqueeText";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles, Layers, Zap, Code, Palette, Globe } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useParallax } from "@/hooks/useParallax";
 import { supabase } from "@/integrations/supabase/client";
 import rainLogo from "@/assets/rain-logo.png";
 
@@ -25,16 +27,29 @@ const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
-  const parallaxRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useScrollAnimation(heroRef);
   useScrollAnimation(servicesRef);
   useScrollAnimation(workRef);
-  useParallax(parallaxRef, 0.3);
+  useScrollAnimation(statsRef);
 
   useEffect(() => {
     fetchFeaturedProjects();
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const fetchFeaturedProjects = async () => {
@@ -48,38 +63,133 @@ const Home = () => {
     if (data) setFeaturedProjects(data);
   };
 
+  const services = [
+    {
+      icon: Palette,
+      title: "Brand Strategy",
+      description: "Craft compelling brand identities that resonate with your audience and stand the test of time.",
+      items: ["Positioning", "Identity Design", "Brand Guidelines"]
+    },
+    {
+      icon: Layers,
+      title: "Digital Design",
+      description: "Create stunning digital experiences that captivate users and drive engagement.",
+      items: ["UI/UX Design", "Web Design", "Mobile Apps"]
+    },
+    {
+      icon: Code,
+      title: "Development",
+      description: "Build robust, scalable solutions with cutting-edge technology and best practices.",
+      items: ["Web Development", "E-Commerce", "Custom Solutions"]
+    }
+  ];
+
+  const stats = [
+    { value: 150, suffix: "+", label: "Projects Delivered" },
+    { value: 98, suffix: "%", label: "Client Satisfaction" },
+    { value: 12, suffix: "+", label: "Years Experience" },
+    { value: 50, suffix: "+", label: "Happy Clients" },
+  ];
+
+  const marqueeItems = ["STRATEGY", "DESIGN", "DEVELOPMENT", "INNOVATION", "CREATIVITY"];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div ref={parallaxRef} className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
-        </div>
+        <FloatingOrbs />
+        
+        {/* Animated grid background */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, hsl(var(--accent)) 0%, transparent 50%)`,
+            transition: 'background-image 0.3s ease',
+          }}
+        />
+        
+        {/* Grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: 'linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        />
 
         <div ref={heroRef} className="reveal container mx-auto px-6 py-32 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            <div className="mb-12 flex justify-center">
+            {/* Animated badge */}
+            <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card animate-fade-in">
+              <Sparkles className="w-4 h-4 text-accent animate-pulse-slow" />
+              <span className="text-sm text-muted-foreground">Digital-first strategy + design agency</span>
+            </div>
+
+            {/* Logo with glow effect */}
+            <div className="mb-12 flex justify-center relative">
+              <div className="absolute inset-0 flex justify-center items-center">
+                <div className="w-96 h-96 bg-primary/30 rounded-full blur-[100px] animate-pulse-slow" />
+              </div>
               <img 
                 src={rainLogo} 
                 alt="RAIN - Digital-first strategy + design agency"
-                className="w-full max-w-2xl h-auto animate-scale-in"
+                className="w-full max-w-2xl h-auto animate-scale-in relative z-10"
               />
             </div>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              We build brands for companies that aim to stand out
+
+            {/* Tagline with gradient */}
+            <p className="text-2xl md:text-3xl text-foreground mb-8 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              We build brands for companies that aim to{' '}
+              <span className="text-gradient font-bold">stand out</span>
             </p>
-            <p className="text-sm uppercase tracking-widest text-muted-foreground mb-12">
-              Digital-first strategy + design agency
-            </p>
-            <Link to="/portfolio">
-              <Button size="lg" className="group">
-                View Our Work
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
-              </Button>
-            </Link>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <Link to="/portfolio">
+                <Button size="lg" className="group hover-lift">
+                  View Our Work
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="group glass-card hover-lift">
+                  Get In Touch
+                  <Zap className="ml-2 w-4 h-4 transition-transform group-hover:scale-110" />
+                </Button>
+              </Link>
+            </div>
+
+            {/* Scroll indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
+              <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1">
+                <div className="w-1.5 h-3 rounded-full bg-accent animate-pulse-slow" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Marquee Section */}
+      <MarqueeText items={marqueeItems} speed={25} />
+
+      {/* Stats Section */}
+      <section ref={statsRef} className="reveal py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {stats.map((stat, i) => (
+              <div 
+                key={i} 
+                className="text-center p-6 rounded-2xl glass-card hover-lift"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-2">
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -87,40 +197,48 @@ const Home = () => {
       {/* Services Section */}
       <section ref={servicesRef} className="reveal py-32 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl md:text-7xl font-display font-bold mb-20 text-center">
-            What We Do
-          </h2>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+              <Globe className="w-4 h-4 text-accent" />
+              <span className="text-sm text-muted-foreground">Our Services</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-display font-bold">
+              What We <span className="text-gradient">Do</span>
+            </h2>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: "Brand Strategy",
-                items: ["Positioning", "Identity Design", "Brand Guidelines"]
-              },
-              {
-                title: "Digital Design",
-                items: ["UI/UX Design", "Web Design", "Mobile Apps"]
-              },
-              {
-                title: "Development",
-                items: ["Web Development", "E-Commerce", "Custom Solutions"]
-              }
-            ].map((service, i) => (
+            {services.map((service, i) => (
               <Card
                 key={i}
-                className="p-8 bg-card border-border hover:border-accent transition-all duration-500 hover:shadow-glow"
+                className="group p-8 glass-card hover-lift gradient-border overflow-hidden relative"
                 style={{ animationDelay: `${i * 0.2}s` }}
               >
-                <h3 className="text-2xl font-display font-bold mb-6 text-accent">
-                  {service.title}
-                </h3>
-                <ul className="space-y-3">
-                  {service.items.map((item, j) => (
-                    <li key={j} className="text-muted-foreground">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                    <service.icon className="w-7 h-7 text-accent" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-accent transition-colors">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-3">
+                    {service.items.map((item, j) => (
+                      <li key={j} className="flex items-center gap-3 text-muted-foreground">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </Card>
             ))}
           </div>
@@ -128,15 +246,24 @@ const Home = () => {
       </section>
 
       {/* Featured Work */}
-      <section ref={workRef} className="reveal py-32 bg-card/30">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-between items-end mb-16">
-            <h2 className="text-5xl md:text-7xl font-display font-bold">
-              Featured Work
-            </h2>
+      <section ref={workRef} className="reveal py-32 relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/30 to-transparent" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+                <Sparkles className="w-4 h-4 text-accent" />
+                <span className="text-sm text-muted-foreground">Portfolio</span>
+              </div>
+              <h2 className="text-5xl md:text-7xl font-display font-bold">
+                Featured <span className="text-gradient">Work</span>
+              </h2>
+            </div>
             <Link to="/portfolio">
-              <Button variant="ghost" className="group">
-                View All
+              <Button variant="ghost" className="group glass-card">
+                View All Projects
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
               </Button>
             </Link>
@@ -147,20 +274,27 @@ const Home = () => {
               <Link
                 key={project.id}
                 to={`/portfolio/${project.slug}`}
-                className="group"
+                className="group block"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <Card className="overflow-hidden bg-card border-border hover:border-accent transition-all duration-500">
+                <Card className="overflow-hidden glass-card hover-lift">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={project.image_url}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                     />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Category badge */}
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full glass-card text-xs font-medium">
+                      {project.category}
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="text-sm text-muted-foreground mb-2">
-                      {project.category} • {project.year}
+                      {project.year}
                     </div>
                     <h3 className="text-xl font-display font-bold group-hover:text-accent transition-colors">
                       {project.title}
@@ -174,15 +308,23 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-5xl md:text-7xl font-display font-bold mb-8">
-            Ready to Stand Out?
+      <section className="py-32 relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] animate-pulse-slow" />
+        </div>
+        
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h2 className="text-5xl md:text-7xl font-display font-bold mb-6">
+            Ready to <span className="text-gradient">Stand Out</span>?
           </h2>
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Let's create something extraordinary together. Transform your vision into reality.
+          </p>
           <Link to="/contact">
-            <Button size="lg" className="group">
-              Get In Touch
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
+            <Button size="lg" className="group hover-lift text-lg px-8 py-6">
+              Start Your Project
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-2" />
             </Button>
           </Link>
         </div>
