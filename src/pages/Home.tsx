@@ -8,7 +8,7 @@ import MarqueeText from "@/components/MarqueeText";
 import RainEffect from "@/components/RainEffect";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Layers, Zap, Code, Palette, Globe } from "lucide-react";
+import { ArrowRight, Sparkles, Layers, Zap, Palette, Globe } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { supabase } from "@/integrations/supabase/client";
 import rainLogo from "@/assets/rain-logo.png";
@@ -66,22 +66,34 @@ const Home = () => {
 
   const services = [
     {
+      icon: Sparkles,
+      title: "Creative & Brand Management",
+      description: "Ongoing creative partnership for artists who want their brand, visuals, and presence to feel fully aligned.",
+      items: ["Brand Strategy", "Creative Direction", "Social Media Management"]
+    },
+    {
       icon: Palette,
-      title: "Brand Strategy",
-      description: "Craft compelling brand identities that resonate with your audience and stand the test of time.",
-      items: ["Positioning", "Identity Design", "Brand Guidelines"]
+      title: "Brand Strategy & Creative Direction",
+      description: "For artists and brands seeking clarity, direction, and a strong creative foundation.",
+      items: ["Brand Positioning", "Visual World-Building", "Campaign Strategy"]
     },
     {
       icon: Layers,
-      title: "Digital Design",
-      description: "Create stunning digital experiences that captivate users and drive engagement.",
-      items: ["UI/UX Design", "Web Design", "Mobile Apps"]
+      title: "Visual Concepts & Execution",
+      description: "Transform ideas into tangible visuals through thoughtful planning and creative execution.",
+      items: ["Concept Development", "Moodboards & Decks", "Creative Direction"]
     },
     {
-      icon: Code,
-      title: "Development",
-      description: "Build robust, scalable solutions with cutting-edge technology and best practices.",
-      items: ["Web Development", "E-Commerce", "Custom Solutions"]
+      icon: Globe,
+      title: "Social & Cultural Strategy",
+      description: "Social presence as an extension of the brand, approached with creative intuition and insight.",
+      items: ["Content Strategy", "Performance Analysis", "Platform Guidance"]
+    },
+    {
+      icon: Zap,
+      title: "PR & Visibility Strategy",
+      description: "Thoughtful outreach to help you be seen in the right spaces, by the right audiences.",
+      items: ["Pitch Writing", "Media Outreach", "Brand Positioning"]
     }
   ];
 
@@ -209,7 +221,7 @@ const Home = () => {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((service, i) => (
               <Card
                 key={i}
