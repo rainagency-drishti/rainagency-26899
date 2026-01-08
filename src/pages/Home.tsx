@@ -154,8 +154,13 @@ const Home = () => {
             </div>
 
             {/* Tagline */}
-            <p className="text-2xl md:text-3xl text-foreground/80 mb-8 tracking-wide animate-fade-in italic" style={{ animationDelay: '0.2s' }}>
+            <p className="text-2xl md:text-3xl text-foreground/80 mb-4 tracking-wide animate-fade-in italic" style={{ animationDelay: '0.2s' }}>
               Where creativity flows.
+            </p>
+            
+            {/* Subheadline */}
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              A boutique creative strategy studio for musicians and artists.
             </p>
 
             {/* CTA buttons */}
