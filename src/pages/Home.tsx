@@ -188,6 +188,32 @@ const Home = () => {
       {/* Marquee Section */}
       <MarqueeText items={marqueeItems} speed={25} />
 
+      {/* About Rain Section */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+              <Sparkles className="w-4 h-4 text-accent" />
+              <span className="text-sm text-muted-foreground">About Rain</span>
+            </div>
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
+              Rain is a boutique creative strategy and branding studio built for musicians and artists who care about intention, identity, and long-term impact. We work closely with creatives to shape cohesive worlds through strategy, storytelling, and creative direction — supporting everything from visuals and content to culture and visibility.
+            </p>
+            <p className="text-lg text-muted-foreground italic">
+              At Rain, creativity is approached with care, clarity, and purpose.
+            </p>
+            <div className="mt-10">
+              <Link to="/about">
+                <Button variant="outline" className="group glass-card hover-lift">
+                  Learn More About Us
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section ref={statsRef} className="reveal py-24 relative">
         <div className="container mx-auto px-6">
