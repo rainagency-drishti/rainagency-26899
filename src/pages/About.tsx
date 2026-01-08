@@ -104,22 +104,36 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="glass-card p-8 md:p-12 rounded-2xl">
-              <div className="mb-6">
-                <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
-                  About the Founder
-                </p>
-                <h2 className="text-3xl md:text-4xl font-display text-primary">
-                  Drishti Das
-                </h2>
-                <p className="text-lg text-accent mt-2">Founder & Creative Director</p>
-              </div>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p>
-                  Drishti brings together strategic thinking and creative intuition, with a background in marketing, storytelling, and startup work. Her experience includes growing a client's social presence to over 140K+ followers, driving creative culture through IU Innovates, and coaching early-stage ventures on brand and marketing strategy.
-                </p>
-                <p>
-                  She approaches every project as a collaborator, staying closely involved from vision to execution. Rain reflects her values: intentionality, cultural awareness, and care for the people behind the work.
-                </p>
+              <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                {/* Founder Photo */}
+                <div className="flex-shrink-0">
+                  <div className="w-40 h-40 md:w-52 md:h-52 rounded-full bg-gradient-to-br from-primary/30 to-accent/20 border-2 border-primary/20 flex items-center justify-center overflow-hidden">
+                    <div className="text-6xl md:text-7xl text-primary/40 font-display">
+                      DD
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Founder Info */}
+                <div className="flex-1">
+                  <div className="mb-6">
+                    <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
+                      About the Founder
+                    </p>
+                    <h2 className="text-3xl md:text-4xl font-display text-primary">
+                      Drishti Das
+                    </h2>
+                    <p className="text-lg text-accent mt-2">Founder & Creative Director</p>
+                  </div>
+                  <div className="space-y-6 text-muted-foreground leading-relaxed">
+                    <p>
+                      Drishti brings together strategic thinking and creative intuition, with a background in marketing, storytelling, and startup work. Her experience includes growing a client's social presence to over 140K+ followers, driving creative culture through IU Innovates, and coaching early-stage ventures on brand and marketing strategy.
+                    </p>
+                    <p>
+                      She approaches every project as a collaborator, staying closely involved from vision to execution. Rain reflects her values: intentionality, cultural awareness, and care for the people behind the work.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.section>

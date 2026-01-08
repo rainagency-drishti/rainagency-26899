@@ -75,23 +75,23 @@ const RainCursor = () => {
           fill="none"
           className="transition-all duration-200"
           style={{
-            filter: 'drop-shadow(0 0 8px hsl(209 100% 88% / 0.5))',
+            filter: 'drop-shadow(0 0 6px hsl(211 60% 20% / 0.6))',
           }}
         >
           <path
             d="M12 0C12 0 2 12 2 18C2 24.627 6.373 29 12 29C17.627 29 22 24.627 22 18C22 12 12 0 12 0Z"
             fill="url(#rainGradient)"
-            stroke="hsl(209 100% 88%)"
-            strokeWidth="1"
+            stroke="hsl(211 50% 35%)"
+            strokeWidth="1.5"
           />
           <defs>
             <linearGradient id="rainGradient" x1="12" y1="0" x2="12" y2="29" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="hsl(209 100% 93%)" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="hsl(211 72% 26%)" stopOpacity="0.7" />
+              <stop offset="0%" stopColor="hsl(209 70% 55%)" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="hsl(211 72% 18%)" stopOpacity="0.9" />
             </linearGradient>
           </defs>
           {/* Highlight */}
-          <ellipse cx="8" cy="14" rx="2" ry="3" fill="white" fillOpacity="0.4" />
+          <ellipse cx="8" cy="14" rx="2" ry="3" fill="white" fillOpacity="0.25" />
         </svg>
       </div>
 
