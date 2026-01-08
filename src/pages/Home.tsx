@@ -153,10 +153,9 @@ const Home = () => {
               />
             </div>
 
-            {/* Tagline with gradient */}
-            <p className="text-2xl md:text-3xl text-foreground mb-8 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              We build brands for companies that aim to{' '}
-              <span className="text-gradient font-bold">stand out</span>
+            {/* Tagline */}
+            <p className="text-2xl md:text-3xl text-foreground/80 mb-8 tracking-wide animate-fade-in italic" style={{ animationDelay: '0.2s' }}>
+              Where creativity flows.
             </p>
 
             {/* CTA buttons */}
