@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -14,8 +14,6 @@ const About = () => {
   const approachRef = useRef<HTMLDivElement>(null);
   const founderRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  
-  const [activeSection, setActiveSection] = useState("hero");
 
   useScrollAnimation(heroRef);
   useScrollAnimation(missionRef);
@@ -23,55 +21,15 @@ const About = () => {
   useScrollAnimation(founderRef);
   useScrollAnimation(ctaRef);
 
-  const sections = [
-    { id: "hero", label: "Intro" },
-    { id: "mission", label: "Mission" },
-    { id: "approach", label: "Approach" },
-    { id: "founder", label: "Founder" },
-    { id: "cta", label: "Connect" },
-  ];
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      setActiveSection(id);
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-background relative transition-colors duration-500">
       <RainEffect />
       <FloatingOrbs />
       <Navigation />
-
-      {/* Section Navigation */}
-      <nav className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-4">
-        {sections.map((section) => (
-          <button
-            key={section.id}
-            onClick={() => scrollToSection(section.id)}
-            className={`group flex items-center gap-3 transition-all duration-300 ${
-              activeSection === section.id ? "opacity-100" : "opacity-40 hover:opacity-70"
-            }`}
-          >
-            <span className={`text-xs uppercase tracking-widest transition-all duration-300 ${
-              activeSection === section.id 
-                ? "text-accent translate-x-0" 
-                : "text-muted-foreground -translate-x-2 group-hover:translate-x-0"
-            }`}>
-              {section.label}
-            </span>
-            <div className={`w-8 h-px transition-all duration-300 ${
-              activeSection === section.id ? "bg-accent w-12" : "bg-muted-foreground"
-            }`} />
-          </button>
-        ))}
-      </nav>
       
       <main className="pt-24 pb-20 relative z-10">
         {/* Hero Section */}
-        <section id="hero" ref={heroRef} className="reveal container mx-auto px-6 pt-20 pb-24">
+        <section ref={heroRef} className="reveal container mx-auto px-6 pt-20 pb-24">
           <div className="max-w-4xl">
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6 animate-fade-in">
               The Studio
