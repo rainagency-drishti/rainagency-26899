@@ -155,7 +155,7 @@ const Home = () => {
 
             {/* Tagline */}
             <p className="text-2xl md:text-3xl text-foreground/80 mb-4 tracking-wide animate-fade-in italic" style={{ animationDelay: '0.2s' }}>
-              Where creativity flows.
+              Where creativity flows. When it rains, it pours.
             </p>
             
             {/* Subheadline */}

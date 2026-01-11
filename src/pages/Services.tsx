@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import { motion } from "framer-motion";
-import { ArrowRight, Droplets } from "lucide-react";
+import { ArrowUpRight, Droplets } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -13,7 +13,7 @@ const Services = () => {
       number: "01",
       title: "Creative & Brand Management",
       subtitle: "Rain's flagship offering",
-      description: "An ongoing creative partnership for artists who want their brand, visuals, and presence to feel fully aligned. This is for clients who are building something lasting — not just releasing work.",
+      description: "This is for artists who want everything to feel connected—your brand, your visuals, your presence, your story. We become an extension of your team, handling the big picture so you can focus on creating. Think of it as having a creative director, strategist, and project manager rolled into one ongoing partnership.",
       items: [
         "Brand strategy & long-term vision",
         "Creative direction across touchpoints",
@@ -30,7 +30,7 @@ const Services = () => {
       number: "02",
       title: "Brand Strategy & Direction",
       subtitle: "For clarity and foundation",
-      description: "For artists and brands seeking clarity on who they are, what they stand for, and how that translates visually and culturally. A strong creative foundation to build from.",
+      description: "Sometimes you just need to get clear on who you are before you can move forward. This is a deep-dive into your identity—what you stand for, how you want to show up, and what that looks like visually and culturally. We build the foundation so everything else has somewhere to stand.",
       items: [
         "Brand positioning & narrative",
         "Creative direction & aesthetic",
@@ -44,7 +44,7 @@ const Services = () => {
       number: "03",
       title: "Visual Concepts & Execution",
       subtitle: "From idea to vision",
-      description: "Transforming ideas into tangible visuals through thoughtful planning and execution. From initial concept to final output, maintaining the integrity of the vision throughout.",
+      description: "You have an idea in your head—we help you pull it out and make it real. From early concepts and moodboards to on-set direction and final output, we handle the creative logistics so the vision stays intact from start to finish. No compromises, no watered-down results.",
       items: [
         "Concept development for visuals & shoots",
         "Moodboards & creative decks",
@@ -58,7 +58,7 @@ const Services = () => {
       number: "04",
       title: "Social & Cultural Strategy",
       subtitle: "Presence with intention",
-      description: "Social presence as an extension of the brand, not an afterthought. Creative intuition meets performance insight — every platform intentional and aligned.",
+      description: "Your social presence should feel like you, not like a marketing checklist. We approach every platform with creative intuition backed by real data—building content that connects, not just content that posts. It's about being present in a way that actually matters.",
       items: [
         "Social strategy & management",
         "Content ideation & storytelling",
@@ -72,7 +72,7 @@ const Services = () => {
       number: "05",
       title: "PR & Visibility Strategy",
       subtitle: "Seen in the right spaces",
-      description: "Being seen in the right spaces, by the right audiences. Thoughtful outreach and alignment rather than mass exposure.",
+      description: "Getting press isn't about volume—it's about placement. We focus on getting you in front of the right people, in the right spaces, at the right time. Thoughtful outreach, genuine relationship-building, and positioning that feels earned, not bought.",
       items: [
         "Platform & outlet research",
         "Pitch writing & positioning",
@@ -95,7 +95,7 @@ const Services = () => {
         <div className="container mx-auto px-6 relative z-10">
           {/* Page Intro */}
           <motion.header 
-            className="max-w-3xl mx-auto text-center mb-32"
+            className="max-w-4xl mb-32"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -105,24 +105,22 @@ const Services = () => {
               <span className="text-sm text-muted-foreground">What We Do</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-display mb-8 text-primary">
-              Services
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 leading-[0.9]">
+              <span className="text-gradient">Services</span>
             </h1>
             
-            <p className="text-xl md:text-2xl italic text-foreground/80 mb-6">
-              Creativity is not treated as a deliverable.<br />
-              It is treated as a relationship.
+            <p className="text-2xl md:text-3xl italic text-foreground/80 mb-8 max-w-3xl leading-relaxed">
+              Creativity isn't something we deliver.<br />
+              It's something we build together.
             </p>
             
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Rain works closely with artists and culture-led brands to build cohesive worlds 
-              through strategy, storytelling, and creative direction. Every partnership is 
-              intentional, collaborative, and rooted in alignment.
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              We work closely with artists and culture-led brands to create cohesive worlds through strategy, storytelling, and hands-on creative direction. Every partnership is intentional, collaborative, and rooted in real alignment—not just a signed contract.
             </p>
           </motion.header>
 
-          {/* Services Grid */}
-          <div className="space-y-8 max-w-5xl mx-auto">
+          {/* Services List */}
+          <div className="space-y-24 max-w-5xl">
             {services.map((service, index) => (
               <motion.article
                 key={index}
@@ -132,85 +130,96 @@ const Services = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
               >
-                <div className="glass-card p-8 md:p-10 hover-lift transition-all duration-500">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    {/* Number */}
-                    <div className="shrink-0">
-                      <span className="text-6xl md:text-7xl font-display text-primary/15 group-hover:text-primary/25 transition-colors duration-500">
-                        {service.number}
-                      </span>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 space-y-6">
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                          {service.subtitle}
-                        </p>
-                        <h2 className="text-2xl md:text-3xl font-display text-foreground group-hover:text-primary transition-colors duration-300">
-                          {service.title}
-                        </h2>
-                      </div>
-                      
-                      <p className="text-muted-foreground leading-relaxed">
-                        {service.description}
-                      </p>
-                      
-                      {/* Items in compact layout */}
-                      <div className="flex flex-wrap gap-2">
-                        {service.items.map((item, i) => (
-                          <span 
-                            key={i} 
-                            className="px-3 py-1.5 text-sm bg-primary/5 text-foreground/80 rounded-full border border-primary/10"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      {/* Note */}
-                      <p className="text-sm text-muted-foreground/70 italic pt-2 border-t border-border/30">
-                        {service.note}
-                      </p>
-                    </div>
+                {/* Service Header */}
+                <div className="flex items-start gap-8 md:gap-12 mb-8">
+                  <span className="text-7xl md:text-8xl font-display text-primary/10 group-hover:text-primary/20 transition-colors duration-500 leading-none">
+                    {service.number}
+                  </span>
+                  <div className="pt-4">
+                    <p className="text-xs uppercase tracking-[0.2em] text-accent mb-2">
+                      {service.subtitle}
+                    </p>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                      {service.title}
+                    </h2>
                   </div>
                 </div>
+                
+                {/* Service Content */}
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12 pl-0 md:pl-24">
+                  <div>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {service.items.map((item, i) => (
+                        <span 
+                          key={i} 
+                          className="px-4 py-2 text-sm bg-primary/5 text-foreground/80 rounded-full border border-primary/10 hover:border-accent/30 transition-colors"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <p className="text-sm text-accent italic">
+                      {service.note}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Divider */}
+                {index < services.length - 1 && (
+                  <div className="mt-16 border-b border-border/30" />
+                )}
               </motion.article>
             ))}
           </div>
 
           {/* Closing Section */}
           <motion.section 
-            className="max-w-2xl mx-auto text-center mt-32"
+            className="mt-40 max-w-4xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-display mb-6 text-foreground">
+            <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6">
               Working With Rain
+            </p>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-8 leading-tight">
+              <span className="text-gradient">Ready to start?</span>
+              <br />
+              <span className="italic font-light text-muted-foreground">Here's how it works.</span>
             </h2>
             
-            <div className="space-y-4 text-muted-foreground leading-relaxed mb-10">
-              <p>
-                All clients begin with a preliminary call to ensure creative alignment.
-              </p>
-              <p>
-                Rain works with a limited number of clients at a time to maintain depth, 
-                focus, and creative integrity.
-              </p>
-              <p className="text-foreground/80 italic text-lg">
-                If you're building something meaningful and want a partner who is 
-                deeply invested — Rain may be the right fit.
-              </p>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12">
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Every client starts with a preliminary call. It's not a sales pitch—it's a real conversation to see if there's creative alignment and if Rain is the right partner for what you're building.
+                </p>
+                <p>
+                  We keep our roster intentionally small. That means fewer clients, deeper work, and partnerships where we're genuinely invested in your success—not just your project.
+                </p>
+              </div>
+              
+              <div className="space-y-4">
+                <p className="text-lg text-foreground/80 italic leading-relaxed">
+                  If you're building something meaningful and want a partner who actually cares about getting it right—Rain might be exactly what you're looking for.
+                </p>
+                
+                <Link to="/contact">
+                  <Button size="lg" className="group hover-lift mt-4">
+                    Start a Conversation
+                    <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Button>
+                </Link>
+              </div>
             </div>
-            
-            <Link to="/contact">
-              <Button size="lg" className="group hover-lift">
-                Start a Conversation
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
-              </Button>
-            </Link>
           </motion.section>
         </div>
       </main>
