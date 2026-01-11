@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -14,6 +14,8 @@ const About = () => {
   const approachRef = useRef<HTMLDivElement>(null);
   const founderRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  
+  const [activeSection, setActiveSection] = useState("hero");
 
   useScrollAnimation(heroRef);
   useScrollAnimation(missionRef);
@@ -21,15 +23,55 @@ const About = () => {
   useScrollAnimation(founderRef);
   useScrollAnimation(ctaRef);
 
+  const sections = [
+    { id: "hero", label: "Intro" },
+    { id: "mission", label: "Mission" },
+    { id: "approach", label: "Approach" },
+    { id: "founder", label: "Founder" },
+    { id: "cta", label: "Connect" },
+  ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveSection(id);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background relative">
       <RainEffect />
       <FloatingOrbs />
       <Navigation />
+
+      {/* Section Navigation */}
+      <nav className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-4">
+        {sections.map((section) => (
+          <button
+            key={section.id}
+            onClick={() => scrollToSection(section.id)}
+            className={`group flex items-center gap-3 transition-all duration-300 ${
+              activeSection === section.id ? "opacity-100" : "opacity-40 hover:opacity-70"
+            }`}
+          >
+            <span className={`text-xs uppercase tracking-widest transition-all duration-300 ${
+              activeSection === section.id 
+                ? "text-accent translate-x-0" 
+                : "text-muted-foreground -translate-x-2 group-hover:translate-x-0"
+            }`}>
+              {section.label}
+            </span>
+            <div className={`w-8 h-px transition-all duration-300 ${
+              activeSection === section.id ? "bg-accent w-12" : "bg-muted-foreground"
+            }`} />
+          </button>
+        ))}
+      </nav>
       
       <main className="pt-24 pb-20 relative z-10">
         {/* Hero Section */}
-        <section ref={heroRef} className="reveal container mx-auto px-6 pt-20 pb-24">
+        <section id="hero" ref={heroRef} className="reveal container mx-auto px-6 pt-20 pb-24">
           <div className="max-w-4xl">
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6 animate-fade-in">
               The Studio
@@ -41,13 +83,13 @@ const About = () => {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Rain is a boutique creative strategy studio for musicians and artists 
-              who value intention, identity, and lasting impact.
+              who care about intention over attention, identity over aesthetics, and lasting impact over viral moments.
             </p>
           </div>
         </section>
 
         {/* Mission & Name Section */}
-        <section ref={missionRef} className="reveal container mx-auto px-6 mb-24">
+        <section id="mission" ref={missionRef} className="reveal container mx-auto px-6 mb-24">
           <div className="glass-card p-8 md:p-12 lg:p-16 rounded-2xl max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16">
               {/* The Mission */}
@@ -60,12 +102,12 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Rain was born from a belief that creatives shouldn't have to sacrifice 
-                    depth for visibility, or authenticity for growth.
+                    We started Rain because too many creatives were being told to choose—depth or visibility, 
+                    authenticity or growth. That's a false choice.
                   </p>
                   <p>
-                    Strategy should amplify creativity, not constrain it. 
-                    Growth should feel organic, never forced.
+                    Good strategy should make your work louder, not quieter. 
+                    Growth should feel like an extension of who you already are.
                   </p>
                 </div>
               </div>
@@ -80,12 +122,12 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Rain arrives without rushing. It creates space, nurtures growth, 
-                    and allows things to unfold in their own time.
+                    Rain doesn't rush. It shows up, creates space, and lets things grow 
+                    in their own time. That's how we work too.
                   </p>
                   <p className="italic text-foreground/80">
-                    That's how we approach creative work—rooted in cultural awareness, 
-                    inclusivity, and making space for every voice.
+                    Every project we take on is rooted in cultural awareness, 
+                    inclusivity, and making real space for every voice at the table.
                   </p>
                 </div>
               </div>
@@ -94,7 +136,7 @@ const About = () => {
         </section>
 
         {/* The Approach */}
-        <section ref={approachRef} className="reveal container mx-auto px-6 mb-24">
+        <section id="approach" ref={approachRef} className="reveal container mx-auto px-6 mb-24">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12">
               <p className="text-sm uppercase tracking-[0.3em] text-accent mb-4">
@@ -111,15 +153,15 @@ const About = () => {
               {[
                 {
                   title: "Intentionally Small",
-                  description: "Limited roster. Deep focus. Meaningful collaboration with every client we partner with."
+                  description: "We keep our roster tight on purpose. Fewer clients means deeper work, real collaboration, and partnerships that actually go somewhere."
                 },
                 {
                   title: "Full Spectrum",
-                  description: "Creative strategy, brand management, content direction, social strategy, and PR support."
+                  description: "Strategy, brand, content, social, PR—we handle the full picture so nothing falls through the cracks and everything stays cohesive."
                 },
                 {
-                  title: "Values-Driven",
-                  description: "We work with artists, musicians, brands, and founders building something culturally intentional."
+                  title: "Values-First",
+                  description: "We work with artists, musicians, and founders who are building something that matters—projects with heart, not just hype."
                 }
               ].map((item, index) => (
                 <div 
@@ -139,7 +181,7 @@ const About = () => {
         </section>
 
         {/* Founder Section */}
-        <section ref={founderRef} className="reveal container mx-auto px-6 mb-24">
+        <section id="founder" ref={founderRef} className="reveal container mx-auto px-6 mb-24">
           <div className="glass-card p-8 md:p-12 lg:p-16 rounded-2xl max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
               {/* Founder Photo */}
@@ -161,17 +203,16 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Drishti brings together strategic thinking and creative intuition, 
-                    with a background spanning marketing, storytelling, and startup ecosystems.
+                    Drishti sits at the intersection of strategy and intuition—equal parts analytical thinker 
+                    and creative gut-checker. Her background spans marketing, storytelling, and the startup world.
                   </p>
                   <p>
-                    Her work includes growing a client's social presence to 140K+ followers, 
-                    driving creative culture at IU Innovates, and coaching early-stage ventures 
-                    on brand and marketing strategy.
+                    She's grown a client's social presence to 140K+ followers, shaped creative culture at IU Innovates, 
+                    and coached early-stage founders on how to actually communicate what they're building.
                   </p>
                   <p className="italic text-foreground/80">
-                    Rain reflects her core values: intentionality, cultural awareness, 
-                    and genuine care for the people behind every project.
+                    Rain is the studio she wished existed—one that leads with care, cultural awareness, 
+                    and a genuine investment in the people behind every project.
                   </p>
                 </div>
               </div>
@@ -180,7 +221,7 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section ref={ctaRef} className="reveal container mx-auto px-6">
+        <section id="cta" ref={ctaRef} className="reveal container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6">
               Work With Us
@@ -191,8 +232,8 @@ const About = () => {
               <span className="italic font-light text-muted-foreground">something meaningful.</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-              Rain works with a limited number of clients to maintain depth, focus, 
-              and creative integrity. All partnerships begin with an alignment call.
+              We take on a handful of clients at a time—enough to go deep, not wide. 
+              Every partnership kicks off with a conversation to see if we're the right fit.
             </p>
             
             <Link to="/contact">
