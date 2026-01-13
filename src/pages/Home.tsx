@@ -11,7 +11,8 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Layers, Zap, Palette, Globe } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { supabase } from "@/integrations/supabase/client";
-import rainLogo from "@/assets/rain-logo.png";
+import rainLogoDark from "@/assets/rain-logo.png";
+import rainLogoLight from "@/assets/rain-logo-hero-light.png";
 
 interface Project {
   id: string;
@@ -31,6 +32,7 @@ const Home = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isDark, setIsDark] = useState(true);
 
   useScrollAnimation(heroRef);
   useScrollAnimation(servicesRef);
@@ -39,6 +41,21 @@ const Home = () => {
 
   useEffect(() => {
     fetchFeaturedProjects();
+    
+    // Check initial theme
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ['class'] 
+    });
+    
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -147,7 +164,7 @@ const Home = () => {
                 <div className="w-96 h-96 bg-primary/30 rounded-full blur-[100px] animate-pulse-slow" />
               </div>
               <img 
-                src={rainLogo} 
+                src={isDark ? rainLogoDark : rainLogoLight}
                 alt="RAIN - Digital-first strategy + design agency"
                 className="w-full max-w-2xl h-auto animate-scale-in relative z-10"
               />
