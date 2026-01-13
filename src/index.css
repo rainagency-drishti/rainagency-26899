@@ -7,23 +7,71 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* Light Mode - Soft Sky Blue */
   :root {
-    /* Rain Brand Colors - Dark Mode Primary */
-    --background: 215 66% 15%;
-    --foreground: 209 100% 93%;
+    --background: 213 100% 93%;
+    --foreground: 215 66% 15%;
 
-    --card: 215 50% 12%;
-    --card-foreground: 209 100% 93%;
+    --card: 213 80% 88%;
+    --card-foreground: 215 66% 15%;
 
-    --popover: 215 50% 12%;
-    --popover-foreground: 209 100% 93%;
+    --popover: 213 80% 88%;
+    --popover-foreground: 215 66% 15%;
 
-    /* Primary - Deep Ocean Blue (Main Brand) */
+    /* Primary - Deep Ocean Blue */
     --primary: 211 72% 26%;
     --primary-foreground: 209 100% 93%;
 
     /* Secondary - Midnight Navy */
     --secondary: 215 66% 22%;
+    --secondary-foreground: 209 100% 93%;
+
+    --muted: 213 60% 85%;
+    --muted-foreground: 215 50% 35%;
+
+    --accent: 211 72% 26%;
+    --accent-foreground: 209 100% 93%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 50% 80%;
+    --input: 213 60% 85%;
+    --ring: 211 72% 26%;
+
+    --radius: 0.5rem;
+
+    /* Custom Design Tokens - Light Mode */
+    --gradient-hero: linear-gradient(180deg, hsl(213 100% 93%) 0%, hsl(213 80% 88%) 100%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(211 72% 26% / 0.08) 0px, transparent 50%),
+                     radial-gradient(at 80% 80%, hsl(211 72% 26% / 0.05) 0px, transparent 50%);
+    --gradient-card: linear-gradient(135deg, hsl(213 80% 90%) 0%, hsl(213 70% 86%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(211 72% 26%) 0%, hsl(215 66% 22%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(215 66% 15%) 0%, hsl(211 72% 26%) 100%);
+    
+    --shadow-soft: 0 2px 20px hsl(211 72% 26% / 0.1);
+    --shadow-elevated: 0 20px 60px hsl(211 72% 26% / 0.15);
+    --shadow-glow: 0 0 60px hsl(211 72% 26% / 0.2);
+    
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Dark Mode - Deep Ocean */
+  .dark {
+    --background: 215 66% 10%;
+    --foreground: 209 100% 93%;
+
+    --card: 215 50% 8%;
+    --card-foreground: 209 100% 93%;
+
+    --popover: 215 50% 8%;
+    --popover-foreground: 209 100% 93%;
+
+    --primary: 211 72% 30%;
+    --primary-foreground: 209 100% 93%;
+
+    --secondary: 215 66% 18%;
     --secondary-foreground: 209 100% 93%;
 
     --muted: 215 40% 20%;
@@ -32,40 +80,20 @@ All colors MUST be HSL.
     --accent: 209 100% 88%;
     --accent-foreground: 215 66% 22%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
     --border: 215 40% 25%;
     --input: 215 40% 20%;
-    --ring: 211 72% 26%;
+    --ring: 211 72% 30%;
 
-    --radius: 0.5rem;
-
-    /* Custom Design Tokens - Lunour Style */
-    --gradient-hero: linear-gradient(180deg, hsl(215 66% 15%) 0%, hsl(215 50% 12%) 100%);
-    --gradient-mesh: radial-gradient(at 20% 20%, hsl(211 72% 26% / 0.15) 0px, transparent 50%),
+    --gradient-hero: linear-gradient(180deg, hsl(215 66% 10%) 0%, hsl(215 50% 8%) 100%);
+    --gradient-mesh: radial-gradient(at 20% 20%, hsl(211 72% 30% / 0.15) 0px, transparent 50%),
                      radial-gradient(at 80% 80%, hsl(209 100% 88% / 0.08) 0px, transparent 50%);
-    --gradient-card: linear-gradient(135deg, hsl(215 50% 14%) 0%, hsl(215 40% 16%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(211 72% 26%) 0%, hsl(209 100% 88%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(215 50% 10%) 0%, hsl(215 40% 12%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(211 72% 30%) 0%, hsl(209 100% 88%) 100%);
     --gradient-text: linear-gradient(135deg, hsl(209 100% 88%) 0%, hsl(0 0% 100%) 100%);
     
     --shadow-soft: 0 2px 20px hsl(0 0% 0% / 0.3);
     --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 60px hsl(211 72% 26% / 0.4);
-    
-    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-
-  .dark {
-    --background: 215 66% 10%;
-    --foreground: 209 100% 93%;
-
-    --card: 215 50% 8%;
-    --card-foreground: 209 100% 93%;
-
-    --primary: 211 72% 30%;
-    --secondary: 215 66% 18%;
+    --shadow-glow: 0 0 60px hsl(211 72% 30% / 0.4);
   }
 }
 
