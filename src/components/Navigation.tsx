@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import rainLogo from "@/assets/rain-logo.png";
+import rainLogoDark from "@/assets/rain-logo.png";
+import rainLogoLight from "@/assets/rain-logo-hero-light.png";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navigation = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const navItems = [
     { name: "Work", path: "/portfolio" },
@@ -16,6 +18,21 @@ const Navigation = () => {
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
   ];
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    checkTheme();
+    
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ['class'] 
+    });
+    
+    return () => observer.disconnect();
+  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -26,7 +43,7 @@ const Navigation = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center hover:opacity-80 transition-opacity" onClick={closeMenu}>
-              <img src={rainLogo} alt="RAIN" className="h-8" />
+              <img src={isDark ? rainLogoDark : rainLogoLight} alt="RAIN" className="h-8" />
             </Link>
             
             {/* Desktop Navigation */}
