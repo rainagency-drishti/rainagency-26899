@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Droplets } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -93,19 +93,46 @@ const Services = () => {
       <main className="pt-32 pb-20 relative">
         <FloatingOrbs />
         
-        <div className="relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Page Header */}
+          <motion.header 
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+              <Droplets className="w-4 h-4 text-accent" />
+              <span className="text-sm text-muted-foreground">What We Do</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6">
+              <span className="text-gradient">Services</span>
+            </h1>
+            
+            <p className="text-2xl md:text-3xl font-display text-foreground mb-4 max-w-3xl">
+              Creativity is not treated as a deliverable.
+              It is treated as a relationship.
+            </p>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Rain works closely with artists and culture-led brands to build cohesive worlds 
+              through strategy, storytelling, and creative direction. Every partnership is 
+              intentional, collaborative, and rooted in alignment.
+            </p>
+          </motion.header>
+
           {/* Services List */}
-          <div className="space-y-0">
+          <div className="space-y-8 mb-20">
             {services.map((service, index) => (
-              <motion.section
+              <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`py-20 ${index % 2 === 1 ? 'bg-card/50' : ''}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="container mx-auto px-6">
+                <div className="glass-card p-8 md:p-12 rounded-2xl hover:border-accent/30 transition-all duration-300">
                   <div className="flex flex-col md:flex-row gap-8 md:gap-16">
                     {/* Number */}
                     <div className="md:w-32 flex-shrink-0">
@@ -115,14 +142,14 @@ const Services = () => {
                     </div>
                     
                     {/* Content */}
-                    <div className="flex-1 max-w-4xl">
+                    <div className="flex-1">
                       {/* Subtitle */}
                       <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-2 block">
                         {service.subtitle}
                       </span>
                       
                       {/* Title */}
-                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-6">
+                      <h2 className="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
                         {service.title}
                       </h2>
                       
@@ -148,44 +175,42 @@ const Services = () => {
                     </div>
                   </div>
                 </div>
-              </motion.section>
+              </motion.div>
             ))}
           </div>
 
           {/* Closing Section */}
           <motion.section 
-            className="py-32 text-center"
+            className="text-center max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="container mx-auto px-6 max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
-                Working With Rain
-              </h2>
-              
-              <div className="space-y-4 text-muted-foreground mb-10">
-                <p>
-                  All clients begin with a preliminary call to ensure creative alignment.
-                </p>
-                <p>
-                  Rain works with a limited number of clients at a time to maintain depth, 
-                  focus, and creative integrity.
-                </p>
-                <p>
-                  If you're building something meaningful and want a partner who is 
-                  deeply invested — Rain may be the right fit.
-                </p>
-              </div>
-              
-              <Link to="/contact">
-                <Button size="lg" className="group hover-lift">
-                  Start a Conversation
-                  <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Button>
-              </Link>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+              Working With Rain
+            </h2>
+            
+            <div className="space-y-4 text-muted-foreground mb-10">
+              <p>
+                All clients begin with a preliminary call to ensure creative alignment.
+              </p>
+              <p>
+                Rain works with a limited number of clients at a time to maintain depth, 
+                focus, and creative integrity.
+              </p>
+              <p>
+                If you're building something meaningful and want a partner who is 
+                deeply invested — Rain may be the right fit.
+              </p>
             </div>
+            
+            <Link to="/contact">
+              <Button size="lg" className="group hover-lift">
+                Start a Conversation
+                <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Button>
+            </Link>
           </motion.section>
         </div>
       </main>
