@@ -159,15 +159,17 @@ const Home = () => {
             </div>
 
             {/* Logo with glow effect */}
-            <div className="mb-12 flex justify-center relative">
+            <div className="mb-12 flex justify-center items-center relative">
               <div className="absolute inset-0 flex justify-center items-center">
                 <div className="w-96 h-96 bg-primary/30 rounded-full blur-[100px] animate-pulse-slow" />
               </div>
-              <img 
-                src={isDark ? rainLogoDark : rainLogoLight}
-                alt="RAIN - Digital-first strategy + design agency"
-                className="w-full max-w-2xl h-auto animate-scale-in relative z-10"
-              />
+              <div className="relative z-10 w-full max-w-2xl flex justify-center items-center">
+                <img 
+                  src={isDark ? rainLogoDark : rainLogoLight}
+                  alt="RAIN - Digital-first strategy + design agency"
+                  className="w-full h-auto animate-scale-in object-contain"
+                />
+              </div>
             </div>
 
             {/* Tagline */}
