@@ -237,26 +237,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section ref={statsRef} className="reveal py-24 relative">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {stats.map((stat, i) => (
-              <div 
-                key={i} 
-                className="text-center p-6 rounded-2xl glass-card hover-lift"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-2">
-                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section ref={servicesRef} className="reveal py-32 relative">
         <div className="container mx-auto px-6">
