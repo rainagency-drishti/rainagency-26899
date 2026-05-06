@@ -198,12 +198,6 @@ const Home = () => {
               </Link>
             </div>
 
-            {/* Scroll indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
-              <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1">
-                <div className="w-1.5 h-3 rounded-full bg-accent animate-pulse-slow" />
-              </div>
-            </div>
           </div>
         </div>
       </section>
