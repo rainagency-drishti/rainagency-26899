@@ -17,7 +17,6 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <RainCursor />
         {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
         <BrowserRouter>
           <AnimatedRoutes />
