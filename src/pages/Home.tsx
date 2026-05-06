@@ -84,33 +84,33 @@ const Home = () => {
   const services = [
     {
       icon: Sparkles,
-      title: "Creative & Brand Management",
-      description: "Ongoing creative partnership for artists who want their brand, visuals, and presence to feel fully aligned.",
+      title: "Ongoing Creative & Brand Partnership",
+      description: "An ongoing creative relationship for independent artists ready to build something real and lasting.",
       items: ["Brand Strategy", "Creative Direction", "Social Media Management"]
     },
     {
       icon: Palette,
-      title: "Brand Strategy & Creative Direction",
-      description: "For artists and brands seeking clarity, direction, and a strong creative foundation.",
-      items: ["Brand Positioning", "Visual World-Building", "Campaign Strategy"]
+      title: "Brand Strategy & Artist Development",
+      description: "For artists at the beginning of their journey or at a turning point — defining who you are and how it shows up.",
+      items: ["Brand Positioning", "Visual World-Building", "Brand Guidelines"]
     },
     {
       icon: Layers,
-      title: "Visual Concepts & Execution",
-      description: "Transform ideas into tangible visuals through thoughtful planning and creative execution.",
-      items: ["Concept Development", "Moodboards & Decks", "Creative Direction"]
+      title: "Creative Direction & Production",
+      description: "Bringing a creative vision to life from concept to delivered assets, with every detail handled intentionally.",
+      items: ["Shoot Concepts", "Talent Coordination", "On-Set Direction"]
     },
     {
       icon: Globe,
-      title: "Social & Cultural Strategy",
-      description: "Social presence as an extension of the brand, approached with creative intuition and insight.",
-      items: ["Content Strategy", "Performance Analysis", "Platform Guidance"]
+      title: "Content Strategy & Social Media Management",
+      description: "Consistent, strategic, on-brand social presence built around who you are as an artist.",
+      items: ["Content Calendar", "Publishing", "Performance Reporting"]
     },
     {
       icon: Zap,
-      title: "PR & Visibility Strategy",
-      description: "Thoughtful outreach to help you be seen in the right spaces, by the right audiences.",
-      items: ["Pitch Writing", "Media Outreach", "Brand Positioning"]
+      title: "PR & Media Outreach",
+      description: "Getting your music and your name in front of the right people through crafted story and real relationships.",
+      items: ["EPK Creation", "Media Outreach", "Placement Tracking"]
     }
   ];
 
