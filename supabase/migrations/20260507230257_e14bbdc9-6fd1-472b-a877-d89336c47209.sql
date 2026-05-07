@@ -1,0 +1,1 @@
+UPDATE portfolio_projects SET description='' WHERE LOWER(description)='coming soon';
