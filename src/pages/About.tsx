@@ -34,14 +34,13 @@ const About = () => {
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6 animate-fade-in">
               The Studio
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-8 leading-[0.9]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black mb-8 leading-[0.9]">
               <span className="text-gradient">Building worlds,</span>
               <br />
-              <span className="italic font-light text-muted-foreground">not just releases.</span>
+              <span className="italic font-light text-muted-foreground">Telling Stories.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Rain is a boutique creative strategy studio for musicians and artists 
-              who care about intention over attention, identity over aesthetics, and lasting impact over viral moments.
+              Rain is a boutique creative studio for independent musicians and artists. We exist for the ones who are serious about their craft and need someone equally serious about their brand. Strategy, identity, creative direction, social, PR. We handle the full picture so nothing gets diluted and nothing falls through.
             </p>
           </div>
         </section>
@@ -56,16 +55,11 @@ const About = () => {
                   The Mission
                 </p>
                 <h2 className="text-2xl md:text-3xl font-display font-semibold mb-6 text-foreground">
-                  Protect the art.<br />Structure the vision.
+                  The art comes first.<br />Everything else serves it.
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    We started Rain because too many creatives were being told to choose—depth or visibility, 
-                    authenticity or growth. That's a false choice.
-                  </p>
-                  <p>
-                    Good strategy should make your work louder, not quieter. 
-                    Growth should feel like an extension of who you already are.
+                    Rain started because too many talented artists were burning time figuring out how to market themselves instead of making music. Good strategy shouldn't compromise the work. It should make it louder. That's the only thing we're here to do.
                   </p>
                 </div>
               </div>
@@ -76,16 +70,14 @@ const About = () => {
                   The Name
                 </p>
                 <h2 className="text-2xl md:text-3xl font-display font-semibold mb-6 text-foreground">
-                  Patience.<br />Presence. Growth.
+                  Why Rain.
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Rain doesn't rush. It shows up, creates space, and lets things grow 
-                    in their own time. That's how we work too.
+                    Rain doesn't rush. It shows up, creates space, and lets things grow on their own time. Every project we take on is rooted in cultural awareness and a genuine investment in the person behind the work. Not just what they make, who they are.
                   </p>
                   <p className="italic text-foreground/80">
-                    Every project we take on is rooted in cultural awareness, 
-                    inclusivity, and making real space for every voice at the table.
+                    Every project is rooted in cultural awareness and a genuine investment in the person behind the work.
                   </p>
                 </div>
               </div>
@@ -111,15 +103,15 @@ const About = () => {
               {[
                 {
                   title: "Intentionally Small",
-                  description: "We keep our roster tight on purpose. Fewer clients means deeper work, real collaboration, and partnerships that actually go somewhere."
+                  description: "The roster stays tight on purpose. Fewer clients means deeper work, real creative investment, and partnerships that actually go somewhere."
                 },
                 {
                   title: "Full Spectrum",
-                  description: "Strategy, brand, content, social, PR—we handle the full picture so nothing falls through the cracks and everything stays cohesive."
+                  description: "Strategy, brand, content, social, PR. We handle the full picture so nothing gets diluted and everything stays cohesive."
                 },
                 {
                   title: "Values-First",
-                  description: "We work with artists, musicians, and founders who are building something that matters—projects with heart, not just hype."
+                  description: "We work with artists and creatives who are building something that matters. Projects with heart, not just reach."
                 }
               ].map((item, index) => (
                 <div 
@@ -183,14 +175,13 @@ const About = () => {
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6">
               Work With Us
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-6 leading-tight">
               <span className="text-gradient">Let's build</span>
               <br />
-              <span className="italic font-light text-muted-foreground">something meaningful.</span>
+              <span className="italic font-light text-muted-foreground">something real.</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-              We take on a handful of clients at a time—enough to go deep, not wide. 
-              Every partnership kicks off with a conversation to see if we're the right fit.
+              We take on a handful of clients at a time. Every partnership starts with a conversation.
             </p>
             
             <Link to="/contact">

@@ -109,14 +109,7 @@ const Services = () => {
             </h1>
             
             <p className="text-2xl md:text-3xl font-display text-foreground mb-4 max-w-3xl">
-              Creativity is not treated as a deliverable.
-              It is treated as a relationship.
-            </p>
-            
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              Rain works closely with artists and culture-led brands to build cohesive worlds 
-              through strategy, storytelling, and creative direction. Every partnership is 
-              intentional, collaborative, and rooted in alignment.
+              Every service is built around one thing. Making sure the artist's world is as real and intentional as their music.
             </p>
           </motion.header>
 
@@ -185,22 +178,14 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
-              Working With Rain
+            <h2 className="text-3xl md:text-4xl font-display font-black mb-8">
+              How it works
             </h2>
             
             <div className="space-y-4 text-muted-foreground mb-10">
-              <p>
-                All clients begin with a preliminary call to ensure creative alignment.
-              </p>
-              <p>
-                Rain works with a limited number of clients at a time to maintain depth, 
-                focus, and creative integrity.
-              </p>
-              <p>
-                If you're building something meaningful and want a partner who is 
-                deeply invested — Rain may be the right fit.
-              </p>
+              <p>Every new partnership starts with a call to make sure we're the right fit.</p>
+              <p>Rain works with a limited number of clients at a time. Depth over volume.</p>
+              <p>Pricing is scoped to the project. Reach out and we'll figure it out together.</p>
             </div>
             
             <Link to="/contact">
