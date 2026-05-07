@@ -26,6 +26,34 @@ interface Project {
   featured: boolean;
 }
 
+const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+  <Card
+    className="group p-8 glass-card hover-lift gradient-border overflow-hidden relative"
+    style={{ animationDelay: `${index * 0.2}s` }}
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="relative z-10">
+      <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+        <service.icon className="w-7 h-7 text-accent" />
+      </div>
+      <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-accent transition-colors">
+        {service.title}
+      </h3>
+      <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+        {service.description}
+      </p>
+      <ul className="space-y-3">
+        {service.items.map((item: string, j: number) => (
+          <li key={j} className="flex items-center gap-3 text-muted-foreground">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Card>
+);
+
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
