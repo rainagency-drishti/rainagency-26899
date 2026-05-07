@@ -50,17 +50,17 @@ const artists: Record<string, Artist> = {
   "omkar-shanbhag": {
     slug: "omkar-shanbhag",
     name: "Omkar Shanbhag",
-    tagline: "Singer-songwriter. Guitar. Desi indie.",
+    tagline: "Singer-songwriter",
     bio: [
       "Omkar Shanbhag started making music the way most people do, because he had to. Not because it was easy, or because it made sense, but because not doing it was worse. Music was something his parents pushed him toward growing up, which meant for a long time it felt like theirs, not his. That changed when he started singing for himself.",
       "He picked up guitar in 2023 and something shifted. The self-worth stopped being tied to the mistakes. The point became learning, not performing competence. And songwriting, which he'd blocked for years because he didn't think he was good enough to do it, finally happened.",
       "His sound sits between the emotional depth of classic Bollywood and the intimacy of modern indie. Desi lyrics, minimal production, melody first. The kind of music that sounds like something you've heard before but can't quite place. Familiar in a way that gets under your skin. Think Daniel Caesar meets the nostalgia of a song your parents used to play, but it's yours.",
-      "Rain built his complete brand identity. Visual world, narrative positioning, and creative direction for Na Jao, so that everything he puts out feels as considered as the music itself.",
+      "Rain built his complete brand identity. Visual world, narrative positioning, and creative direction for Is Raah Pe, so that everything he puts out feels as considered as the music itself.",
     ],
-    disciplines: ["Songwriting", "Guitar", "Vocal Performance", "Desi Indie", "Hindi & Punjabi Lyrics"],
+    disciplines: ["Songwriting", "Guitar", "Vocal Performance", "Desi Indie"],
     links: [
       { label: "Instagram @omkar.shanbhag", href: "https://instagram.com/omkar.shanbhag", icon: Instagram },
-      { label: "TikTok @omkar.shanbhag", href: "https://tiktok.com/@omkar.shanbhag", icon: Instagram },
+      { label: "Instagram", href: "https://tiktok.com/@omkar.shanbhag", icon: Instagram },
       { label: "Listen", href: "#", icon: Music },
     ],
     selectedWork: [
