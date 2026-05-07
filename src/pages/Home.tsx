@@ -202,7 +202,7 @@ const Home = () => {
             
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-in" style={{ animationDelay: '1.1s' }}>
-              A boutique creative strategy studio for musicians and artists.
+              A boutique creative strategy studio for artists.
             </p>
 
             {/* CTA buttons */}
