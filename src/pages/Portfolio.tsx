@@ -71,9 +71,9 @@ const Portfolio = () => {
     setIsLoading(false);
   };
 
-  const categories = ["all", ...new Set(projects.map((p) => p.category))];
+  const categories = ["All", "Brand Strategy", "Creative Direction", "Social Media", "PR"];
   const filteredProjects =
-    filter === "all" ? projects : projects.filter((p) => p.category === filter);
+    filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen bg-background relative">
