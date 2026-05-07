@@ -322,7 +322,7 @@ const Home = () => {
                     <img
                       src={project.image_url}
                       alt={project.title}
-                      className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                      className="aspect-[3/4] w-full object-contain bg-background/40 rounded-xl group-hover/card:shadow-xl"
                     />
                   </CardItem>
                   <div className="flex justify-between items-center mt-6">

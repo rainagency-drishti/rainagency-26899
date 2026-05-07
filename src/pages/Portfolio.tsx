@@ -24,7 +24,7 @@ interface Project {
 
 const ProjectSkeleton = () => (
   <article className="glass-card overflow-hidden h-full">
-    <div className="relative aspect-[16/10] overflow-hidden">
+    <div className="relative aspect-[3/4] overflow-hidden">
       <Skeleton className="w-full h-full" />
       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
         <div className="flex items-center gap-3 mb-3">
@@ -135,11 +135,11 @@ const Portfolio = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <article className="glass-card overflow-hidden hover:border-accent/50 transition-all duration-500 h-full">
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-card">
                       <img
                         src={project.image_url}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                       
