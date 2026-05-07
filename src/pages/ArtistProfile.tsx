@@ -134,11 +134,11 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pb-24">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              <h2 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-lg font-extrabold">
                 Profile
               </h2>
               {artist.bio.map((para, i) => (
-                <p key={i} className="text-lg text-foreground/90 leading-relaxed">
+                <p key={i} className="text-foreground/90 leading-relaxed text-xl">
                   {para}
                 </p>
               ))}
