@@ -152,12 +152,6 @@ const Home = () => {
 
         <div ref={heroRef} className="reveal container mx-auto px-6 py-32 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            {/* Animated badge */}
-            <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card animate-fade-in">
-              <Sparkles className="w-4 h-4 text-accent animate-pulse-slow" />
-              <span className="text-sm text-muted-foreground">Digital-first strategy + design agency</span>
-            </div>
-
             {/* Logo with glow effect */}
             <div className="mb-12 flex justify-center items-center relative">
               <div className="absolute inset-0 flex justify-center items-center">
