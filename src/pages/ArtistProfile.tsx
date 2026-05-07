@@ -160,7 +160,7 @@ const ArtistProfile = () => {
               </div>
 
               <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-base font-extrabold">
                   Links
                 </h3>
                 <div className="flex flex-col gap-3">
