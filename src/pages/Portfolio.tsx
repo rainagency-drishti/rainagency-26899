@@ -43,7 +43,7 @@ const ProjectSkeleton = () => (
 const Portfolio = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [filter, setFilter] = useState<string>("all");
+  const [filter, setFilter] = useState<string>("All");
   const heroRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -71,9 +71,9 @@ const Portfolio = () => {
     setIsLoading(false);
   };
 
-  const categories = ["all", ...new Set(projects.map((p) => p.category))];
+  const categories = ["All", "Brand Strategy", "Creative Direction", "Social Media", "PR"];
   const filteredProjects =
-    filter === "all" ? projects : projects.filter((p) => p.category === filter);
+    filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -88,6 +88,26 @@ const Portfolio = () => {
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6 animate-fade-in">
               Meet the Artists
             </p>
+          </div>
+        </section>
+
+        {/* Projects Grid */}
+        {/* Filters */}
+        <section className="container mx-auto px-6 mb-12">
+          <div className="flex flex-wrap gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-4 py-2 text-xs uppercase tracking-[0.15em] rounded-full border transition-all ${
+                  filter === cat
+                    ? "bg-accent text-accent-foreground border-accent"
+                    : "border-border text-muted-foreground hover:text-foreground hover:border-accent/50"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </section>
 
