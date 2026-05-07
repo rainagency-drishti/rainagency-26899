@@ -294,7 +294,7 @@ const Home = () => {
                 <span className="text-sm text-muted-foreground">Portfolio</span>
               </div>
               <h2 className="text-5xl md:text-7xl font-display font-bold">
-                Featured <span className="text-gradient">Work</span>
+                Featured <span className="text-gradient">Artists</span>
               </h2>
             </div>
             <Link to="/portfolio">

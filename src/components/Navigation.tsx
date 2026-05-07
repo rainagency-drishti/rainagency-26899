@@ -13,7 +13,7 @@ const Navigation = () => {
   const [isDark, setIsDark] = useState(true);
 
   const navItems = [
-    { name: "Work", path: "/portfolio" },
+    { name: "Artists", path: "/portfolio" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
