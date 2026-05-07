@@ -86,44 +86,8 @@ const Portfolio = () => {
         <section ref={heroRef} className="reveal container mx-auto px-6 pt-20 pb-16">
           <div className="max-w-4xl">
             <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6 animate-fade-in">
-              Selected Work
+              Meet the Artists
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-[0.9]">
-              <span className="text-gradient">Stories we've</span>
-              <br />
-              <span className="italic font-light text-muted-foreground">helped tell.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              A curated collection of projects where strategy meets artistry. 
-              Each piece reflects our commitment to elevating creative voices.
-            </p>
-          </div>
-        </section>
-
-        {/* Filter */}
-        <section className="container mx-auto px-6 mb-12">
-          <div className="flex flex-wrap gap-3">
-            {isLoading ? (
-              <>
-                <Skeleton className="h-9 w-16 rounded-full" />
-                <Skeleton className="h-9 w-24 rounded-full" />
-                <Skeleton className="h-9 w-20 rounded-full" />
-              </>
-            ) : (
-              categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat)}
-                  className={`px-5 py-2 rounded-full text-sm tracking-wide transition-all duration-300 ${
-                    filter === cat
-                      ? "bg-accent text-accent-foreground"
-                      : "glass-card text-muted-foreground hover:text-foreground hover:border-accent/50"
-                  }`}
-                >
-                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                </button>
-              ))
-            )}
           </div>
         </section>
 
