@@ -1,0 +1,2 @@
+UPDATE public.portfolio_projects SET image_url = '/artists/doyel-das.png' WHERE slug = 'doyel-das';
+UPDATE public.portfolio_projects SET image_url = '/artists/omkar-shanbhag.png' WHERE slug = 'omkar-shanbhag';
