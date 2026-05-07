@@ -92,6 +92,26 @@ const Portfolio = () => {
         </section>
 
         {/* Projects Grid */}
+        {/* Filters */}
+        <section className="container mx-auto px-6 mb-12">
+          <div className="flex flex-wrap gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-4 py-2 text-xs uppercase tracking-[0.15em] rounded-full border transition-all ${
+                  filter === cat
+                    ? "bg-accent text-accent-foreground border-accent"
+                    : "border-border text-muted-foreground hover:text-foreground hover:border-accent/50"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects Grid */}
         <section ref={gridRef} className="reveal container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {isLoading ? (
