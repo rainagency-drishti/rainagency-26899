@@ -122,7 +122,7 @@ const Home = () => {
     { value: 50, suffix: "+", label: "Happy Clients" },
   ];
 
-  const marqueeItems = ["STRATEGY", "DESIGN", "DEVELOPMENT", "INNOVATION", "CREATIVITY"];
+  const marqueeItems = ["Creative Direction", "Brand Strategy", "Artist Development", "PR & Media", "Content Strategy", "Social Media", "Visual Production", "Storytelling"];
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
