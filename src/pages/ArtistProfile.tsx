@@ -28,7 +28,7 @@ const artists: Record<string, Artist> = {
   "doyel-das": {
     slug: "doyel-das",
     name: "Doyel Das",
-    tagline: "Singer, actor, and director. New York City.",
+    tagline: "Singer, Actor, and Director.",
     bio: [
       "There's a sound that old Bollywood had and largely abandoned. Retro, sultry, cinematic, glamorous, built on real instruments and real rooms. Doyel Das is bringing it back.",
       "Informed by 24 years of Hindustani classical training and shaped by the jazz, soul, and disco that defined an era of Hindi film music, she writes and sings entirely in Hindi with a full live band. Everything she makes is intentional, built for a big room, recorded with real people, designed to pull you somewhere specific.",
