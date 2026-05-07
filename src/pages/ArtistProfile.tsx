@@ -36,13 +36,14 @@ const artists: Record<string, Artist> = {
     ],
     disciplines: ["Songwriting", "Hindustani Classical", "Live Performance", "Visual Direction", "Acting & Directing"],
     links: [
-      { label: "Instagram @doy_das", href: "https://instagram.com/doy_das", icon: Instagram },
-      { label: "TikTok @doy_das", href: "https://tiktok.com/@doy_das", icon: Instagram },
+      { label: "Instagram", href: "https://www.instagram.com/doy_das/", icon: Instagram },
+      { label: "TikTok", href: "https://www.tiktok.com/@doy_das", icon: TikTokIcon },
+      { label: "YouTube", href: "https://www.youtube.com/@DoyelDas", icon: Youtube },
       { label: "Listen", href: "https://linktr.ee/doyeldasmusic", icon: Music },
     ],
     selectedWork: [
       { title: "Farebi", year: "2025", type: "Single", image: "/artists/farebi.png", description: "Her debut single. Farebi, which means fraud, is about dancing between authenticity and performance. It's about questioning why it feels like you have to put up a facade on the day-to-day and realizing conformity and adapting become the price of belonging. It's about feeling like a fraud in order to stay in the game. It's about playing the game." },
-      { title: "Iraade", year: "2025", type: "Single", image: "/artists/iraade.png", description: "\"Iraade,\" Hindi for intentions, personifies a dream as a siren. She pulls you into a palace of illusions, shows you the most beautiful version of your life, and asks what you want her - your dream - to be: Khwahish ya saazish - desire or deception? Doyel wrote this song to make sense of her own feelings about ambition - the way a dream can feel electric one moment and a burden the next. Writing it made her realize it was never the dream that was too big. Doyel was choosing to let it crush her, because it felt safer to feel tortured by her ambitions than to risk failing publicly." },
+      { title: "Iraade", year: "2026", type: "Single", image: "/artists/iraade.png", description: "\"Iraade,\" Hindi for intentions, personifies a dream as a siren. She pulls you into a palace of illusions, shows you the most beautiful version of your life, and asks what you want her - your dream - to be: Khwahish ya saazish - desire or deception? Doyel wrote this song to make sense of her own feelings about ambition - the way a dream can feel electric one moment and a burden the next. Writing it made her realize it was never the dream that was too big. Doyel was choosing to let it crush her, because it felt safer to feel tortured by her ambitions than to risk failing publicly." },
       { title: "Untitled EP", year: "2026", type: "EP", description: "A five-song suite where each track is a face card in a deck. Each has its own sonic world. In development. Branding, visuals, and rollout being built by Rain." },
     ],
   },
