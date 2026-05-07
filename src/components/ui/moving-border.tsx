@@ -28,7 +28,7 @@ export const MovingBorderButton = React.forwardRef<
 
     return (
       <div
-        className="relative p-[1.5px] overflow-hidden inline-flex"
+        className="relative p-[2px] overflow-hidden inline-flex"
         style={{ borderRadius }}
       >
         <div
