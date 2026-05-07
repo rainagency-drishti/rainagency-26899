@@ -148,9 +148,11 @@ const Portfolio = () => {
                         <h3 className="text-2xl md:text-3xl font-display font-semibold mb-2 group-hover:text-accent transition-colors">
                           {project.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                          {project.description}
-                        </p>
+                        {project.description && project.description.toLowerCase() !== 'coming soon' && (
+                          <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                            {project.description}
+                          </p>
+                        )}
                         <div className="flex items-center gap-2 text-accent opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                           <span className="text-sm font-medium tracking-wide">View Project</span>
                           <ArrowUpRight className="w-4 h-4" />
