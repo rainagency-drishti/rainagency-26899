@@ -14,7 +14,7 @@ interface Artist {
   bio: string[];
   disciplines: string[];
   links: { label: string; href: string; icon: typeof Instagram }[];
-  selectedWork: { title: string; year: string; type: string; description: string }[];
+  selectedWork: { title: string; year: string; type: string; description: string; image?: string }[];
 }
 
 const artists: Record<string, Artist> = {
@@ -34,8 +34,8 @@ const artists: Record<string, Artist> = {
       { label: "Listen", href: "https://linktr.ee/doyeldasmusic", icon: Music },
     ],
     selectedWork: [
-      { title: "Farebi", year: "2025", type: "Single", description: "Her debut single. Farebi, which means fraud, is about dancing between authenticity and performance. It's about questioning why it feels like you have to put up a facade on the day-to-day and realizing conformity and adapting become the price of belonging. It's about feeling like a fraud in order to stay in the game. It's about playing the game." },
-      { title: "Iraade", year: "2025", type: "Single", description: "The Queen of Hearts. Jazz-pop built for a big room, recorded live at Figure 8 Studios in Brooklyn. It takes you right into the hottest speakeasy in 1960s Bombay. Think the modernity of RAYE, the glamour of old Hollywood, and the soul of old Bollywood." },
+      { title: "Farebi", year: "2025", type: "Single", image: "/artists/farebi.png", description: "Her debut single. Farebi, which means fraud, is about dancing between authenticity and performance. It's about questioning why it feels like you have to put up a facade on the day-to-day and realizing conformity and adapting become the price of belonging. It's about feeling like a fraud in order to stay in the game. It's about playing the game." },
+      { title: "Iraade", year: "2025", type: "Single", image: "/artists/iraade.png", description: "The Queen of Hearts. Jazz-pop built for a big room, recorded live at Figure 8 Studios in Brooklyn. It takes you right into the hottest speakeasy in 1960s Bombay. Think the modernity of RAYE, the glamour of old Hollywood, and the soul of old Bollywood." },
       { title: "Untitled EP", year: "2026", type: "EP", description: "A five-song suite where each track is a face card in a deck. Each has its own sonic world. In development. Branding, visuals, and rollout being built by Rain." },
     ],
   },
@@ -56,7 +56,7 @@ const artists: Record<string, Artist> = {
       { label: "Listen", href: "#", icon: Music },
     ],
     selectedWork: [
-      { title: "Is Rah Pe", year: "2025", type: "Single", description: "His debut single. A song about self-discovery. The journey of doing something you love in spite of every voice telling you you're not ready. The melody makes you feel like you're on the move." },
+      { title: "Is Rah Pe", year: "2025", type: "Single", image: "/artists/is-rah-pe.png", description: "His debut single. A song about self-discovery. The journey of doing something you love in spite of every voice telling you you're not ready. The melody makes you feel like you're on the move." },
       { title: "TBD", year: "Coming Soon", type: "Single", description: "The next chapter. Coming soon." },
     ],
   },
@@ -186,20 +186,31 @@ const ArtistProfile = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               {artist.selectedWork.map((work, i) => (
-                <Card key={i} className="glass-card p-8 hover-lift gradient-border">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xs uppercase tracking-[0.15em] text-accent">
-                      {work.type}
-                    </span>
-                    <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
-                    <span className="text-xs text-muted-foreground">{work.year}</span>
+                <Card key={i} className="glass-card overflow-hidden hover-lift gradient-border">
+                  {work.image && (
+                    <div className="aspect-square w-full overflow-hidden">
+                      <img
+                        src={work.image}
+                        alt={work.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-xs uppercase tracking-[0.15em] text-accent">
+                        {work.type}
+                      </span>
+                      <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
+                      <span className="text-xs text-muted-foreground">{work.year}</span>
+                    </div>
+                    <h3 className="text-2xl font-display font-semibold mb-3">
+                      {work.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {work.description}
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-display font-semibold mb-3">
-                    {work.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {work.description}
-                  </p>
                 </Card>
               ))}
             </div>
