@@ -1,0 +1,2 @@
+UPDATE portfolio_projects SET title='Doyel', slug='doyel', category='Branding', description='Coming soon', image_url='/placeholder.svg', year='' WHERE id='37fbe3fc-ec3a-47ef-b995-3631d5934fae';
+UPDATE portfolio_projects SET title='Omkar', slug='omkar', category='Branding', description='Coming soon', image_url='/placeholder.svg', year='' WHERE id='9bbc1ab5-8518-4bbc-82f2-3dc61abc2f44';
