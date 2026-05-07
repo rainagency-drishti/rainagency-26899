@@ -1,0 +1,1 @@
+UPDATE portfolio_projects SET category='Flagship' WHERE slug IN ('doyel-das','omkar-shanbhag');
