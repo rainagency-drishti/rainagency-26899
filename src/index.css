@@ -451,3 +451,9 @@ All colors MUST be HSL.
 .omkar-theme a {
   font-family: 'Red Hat Display', sans-serif;
 }
+
+.omkar-theme {
+  --gradient-text: linear-gradient(135deg, hsl(100 27% 20%) 0%, hsl(22 39% 35%) 100%);
+  --gradient-hero: linear-gradient(180deg, hsl(40 27% 79%) 0%, hsl(40 22% 73%) 100%);
+  --gradient-card: linear-gradient(135deg, hsl(40 22% 75%) 0%, hsl(40 18% 70%) 100%);
+}
