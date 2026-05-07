@@ -161,16 +161,15 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Drishti sits at the intersection of strategy and intuition—equal parts analytical thinker 
-                    and creative gut-checker. Her background spans marketing, storytelling, and the startup world.
+                    Drishti Das is the founder and creative director of Rain. She started the agency
+                    after watching too many talented independent artists spend more time figuring out
+                    how to market themselves than actually making music. Rain was built to change that.
                   </p>
                   <p>
-                    She's grown a client's social presence to 140K+ followers, shaped creative culture at IU Innovates, 
-                    and coached early-stage founders on how to actually communicate what they're building.
-                  </p>
-                  <p className="italic text-foreground/80">
-                    Rain is the studio she wished existed—one that leads with care, cultural awareness, 
-                    and a genuine investment in the people behind every project.
+                    She works across brand strategy, creative direction, and artist development —
+                    helping artists build not just a look, but a world. She believes the best creative
+                    work happens when an artist fully understands who they are, and her job is to help
+                    get them there.
                   </p>
                 </div>
               </div>
