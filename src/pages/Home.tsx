@@ -7,6 +7,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import MarqueeText from "@/components/MarqueeText";
 import RainEffect from "@/components/RainEffect";
 import { Button } from "@/components/ui/button";
+import { MovingBorderButton } from "@/components/ui/moving-border";
 import { Card } from "@/components/ui/card";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { ArrowRight, Sparkles, Layers, Zap, Palette, Globe } from "lucide-react";
