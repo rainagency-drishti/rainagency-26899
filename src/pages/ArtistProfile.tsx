@@ -21,19 +21,22 @@ const artists: Record<string, Artist> = {
   "doyel-das": {
     slug: "doyel-das",
     name: "Doyel Das",
-    tagline: "Singer-songwriter shaping introspective soundscapes.",
+    tagline: "Singer, actor, and director. New York City.",
     bio: [
-      "Doyel Das is an independent artist whose work moves between intimate songwriting and atmospheric production. Her catalog explores memory, identity, and the quiet textures of everyday life.",
-      "Through her partnership with Rain, Doyel is building a long-form creative world. One that connects her music, visuals, and story into a single cohesive presence.",
+      "There's a sound that old Bollywood had and largely abandoned. Retro, sultry, cinematic, glamorous, built on real instruments and real rooms. Doyel Das is bringing it back.",
+      "Informed by 24 years of Hindustani classical training and shaped by the jazz, soul, and disco that defined an era of Hindi film music, she writes and sings entirely in Hindi with a full live band. Everything she makes is intentional, built for a big room, recorded with real people, designed to pull you somewhere specific.",
+      "Rain built her full creative world: visual identity, brand narrative, and the creative direction for her debut releases, so that everything she puts out feels like the same story, told in the same voice.",
     ],
-    disciplines: ["Songwriting", "Vocal Production", "Visual Direction"],
+    disciplines: ["Songwriting", "Hindustani Classical", "Live Performance", "Visual Direction", "Acting & Directing"],
     links: [
-      { label: "Instagram", href: "#", icon: Instagram },
-      { label: "Listen", href: "#", icon: Music },
+      { label: "Instagram @doy_das", href: "https://instagram.com/doy_das", icon: Instagram },
+      { label: "TikTok @doy_das", href: "https://tiktok.com/@doy_das", icon: Instagram },
+      { label: "Listen", href: "https://linktr.ee/doyeldasmusic", icon: Music },
     ],
     selectedWork: [
-      { title: "Untitled EP", year: "2026", type: "Release", description: "Forthcoming body of work. Branding, visuals, and rollout in development." },
-      { title: "Single Campaign", year: "2025", type: "Campaign", description: "Single release with full creative direction and content strategy." },
+      { title: "Farebi", year: "2025", type: "Single", description: "Her debut single. Farebi, which means fraud, is about dancing between authenticity and performance. It's about questioning why it feels like you have to put up a facade on the day-to-day and realizing conformity and adapting become the price of belonging. It's about feeling like a fraud in order to stay in the game. It's about playing the game." },
+      { title: "Iraade", year: "2025", type: "Single", description: "The Queen of Hearts. Jazz-pop built for a big room, recorded live at Figure 8 Studios in Brooklyn. It takes you right into the hottest speakeasy in 1960s Bombay. Think the modernity of RAYE, the glamour of old Hollywood, and the soul of old Bollywood." },
+      { title: "Untitled EP", year: "2026", type: "EP", description: "A five-song suite where each track is a face card in a deck. Each has its own sonic world. In development. Branding, visuals, and rollout being built by Rain." },
     ],
   },
   "omkar-shanbhag": {
