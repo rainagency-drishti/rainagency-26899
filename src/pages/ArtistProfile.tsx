@@ -188,7 +188,7 @@ const ArtistProfile = () => {
           <div className="max-w-6xl">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-accent mb-3">
+                <p className="uppercase tracking-[0.3em] text-accent mb-3 text-lg font-extrabold">
                   Selected Work
                 </p>
                 <h2 className="text-4xl md:text-5xl font-display font-bold">
