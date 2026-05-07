@@ -8,6 +8,7 @@ import MarqueeText from "@/components/MarqueeText";
 import RainEffect from "@/components/RainEffect";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { ArrowRight, Sparkles, Layers, Zap, Palette, Globe } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { supabase } from "@/integrations/supabase/client";
