@@ -94,9 +94,11 @@ const ArtistProfile = () => {
   }
 
   const isDoyel = artist.slug === "doyel-das";
+  const isOmkar = artist.slug === "omkar-shanbhag";
+  const themeClass = isDoyel ? "doyel-theme" : isOmkar ? "omkar-theme" : "";
 
   return (
-    <div className={`min-h-screen bg-background relative ${isDoyel ? "doyel-theme" : ""}`}>
+    <div className={`min-h-screen bg-background relative ${themeClass}`}>
       <RainEffect />
       <FloatingOrbs />
       <Navigation />
