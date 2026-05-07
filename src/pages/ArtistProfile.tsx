@@ -24,7 +24,7 @@ const artists: Record<string, Artist> = {
     tagline: "Singer-songwriter shaping introspective soundscapes.",
     bio: [
       "Doyel Das is an independent artist whose work moves between intimate songwriting and atmospheric production. Her catalog explores memory, identity, and the quiet textures of everyday life.",
-      "Through her partnership with Rain, Doyel is building a long-form creative world — one that connects her music, visuals, and story into a single cohesive presence.",
+      "Through her partnership with Rain, Doyel is building a long-form creative world. One that connects her music, visuals, and story into a single cohesive presence.",
     ],
     disciplines: ["Songwriting", "Vocal Production", "Visual Direction"],
     links: [
@@ -32,7 +32,7 @@ const artists: Record<string, Artist> = {
       { label: "Listen", href: "#", icon: Music },
     ],
     selectedWork: [
-      { title: "Untitled EP", year: "2026", type: "Release", description: "Forthcoming body of work — branding, visuals, and rollout in development." },
+      { title: "Untitled EP", year: "2026", type: "Release", description: "Forthcoming body of work. Branding, visuals, and rollout in development." },
       { title: "Single Campaign", year: "2025", type: "Campaign", description: "Single release with full creative direction and content strategy." },
     ],
   },
@@ -42,7 +42,7 @@ const artists: Record<string, Artist> = {
     tagline: "Composer and producer building cinematic worlds in sound.",
     bio: [
       "Omkar Shanbhag is a composer and producer whose work bridges classical training and modern production. His sound moves fluidly between film, ambient, and contemporary instrumental music.",
-      "Working with Rain, Omkar is developing a brand identity that mirrors the depth and intentionality of his music — a presence built for longevity, not the algorithm.",
+      "Working with Rain, Omkar is developing a brand identity that mirrors the depth and intentionality of his music. A presence built for longevity, not the algorithm.",
     ],
     disciplines: ["Composition", "Production", "Sound Design"],
     links: [
@@ -50,7 +50,7 @@ const artists: Record<string, Artist> = {
       { label: "Listen", href: "#", icon: Music },
     ],
     selectedWork: [
-      { title: "Score Project", year: "2026", type: "Film", description: "Original score in development — to be announced." },
+      { title: "Score Project", year: "2026", type: "Film", description: "Original score in development. To be announced." },
       { title: "Instrumental Series", year: "2025", type: "Release", description: "Multi-part instrumental release with cohesive visual identity." },
     ],
   },

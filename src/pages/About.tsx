@@ -158,7 +158,7 @@ const About = () => {
                     how to market themselves than actually making music. Rain was built to change that.
                   </p>
                   <p>
-                    She works across brand strategy, creative direction, and artist development —
+                    She works across brand strategy, creative direction, and artist development,
                     helping artists build not just a look, but a world. She believes the best creative
                     work happens when an artist fully understands who they are, and her job is to help
                     get them there.
