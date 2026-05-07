@@ -86,7 +86,7 @@ const Portfolio = () => {
         <section ref={heroRef} className="reveal container mx-auto px-6 pt-20 pb-16">
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight animate-fade-in">
-              Meet the Artists
+              Meet the Artists.
             </h1>
           </div>
         </section>
@@ -145,15 +145,6 @@ const Portfolio = () => {
                       
                       {/* Overlay Content */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className="text-xs uppercase tracking-[0.15em] text-accent">
-                            {project.category}
-                          </span>
-                          <span className="w-1 h-1 rounded-full bg-muted-foreground/50" />
-                          <span className="text-xs text-muted-foreground">
-                            {project.year}
-                          </span>
-                        </div>
                         <h3 className="text-2xl md:text-3xl font-display font-semibold mb-2 group-hover:text-accent transition-colors">
                           {project.title}
                         </h3>
