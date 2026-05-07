@@ -28,7 +28,7 @@ export const MovingBorderButton = React.forwardRef<
 
     return (
       <div
-        className="relative p-[1.5px] overflow-hidden"
+        className="relative p-[1.5px] overflow-hidden inline-flex"
         style={{ borderRadius }}
       >
         <div
@@ -41,13 +41,12 @@ export const MovingBorderButton = React.forwardRef<
           }}
         />
         <div
-          className="relative z-10"
+          className="relative z-10 flex-1"
           style={{ borderRadius: `calc(${borderRadius} - 1.5px)` }}
         >
           <Comp
             className={cn(
-              "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
-              "bg-background text-foreground hover:bg-background/90 w-full",
+              "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 w-full",
               className
             )}
             ref={ref}
