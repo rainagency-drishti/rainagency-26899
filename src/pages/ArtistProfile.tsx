@@ -42,19 +42,22 @@ const artists: Record<string, Artist> = {
   "omkar-shanbhag": {
     slug: "omkar-shanbhag",
     name: "Omkar Shanbhag",
-    tagline: "Composer and producer building cinematic worlds in sound.",
+    tagline: "Singer-songwriter. Guitar. Desi indie.",
     bio: [
-      "Omkar Shanbhag is a composer and producer whose work bridges classical training and modern production. His sound moves fluidly between film, ambient, and contemporary instrumental music.",
-      "Working with Rain, Omkar is developing a brand identity that mirrors the depth and intentionality of his music. A presence built for longevity, not the algorithm.",
+      "Omkar Shanbhag started making music the way most people do, because he had to. Not because it was easy, or because it made sense, but because not doing it was worse. Music was something his parents pushed him toward growing up, which meant for a long time it felt like theirs, not his. That changed when he started singing for himself.",
+      "He picked up guitar in 2023 and something shifted. The self-worth stopped being tied to the mistakes. The point became learning, not performing competence. And songwriting, which he'd blocked for years because he didn't think he was good enough to do it, finally happened.",
+      "His sound sits between the emotional depth of classic Bollywood and the intimacy of modern indie. Desi lyrics, minimal production, melody first. The kind of music that sounds like something you've heard before but can't quite place. Familiar in a way that gets under your skin. Think Daniel Caesar meets the nostalgia of a song your parents used to play, but it's yours.",
+      "Rain built his complete brand identity. Visual world, narrative positioning, and creative direction for Na Jao, so that everything he puts out feels as considered as the music itself.",
     ],
-    disciplines: ["Composition", "Production", "Sound Design"],
+    disciplines: ["Songwriting", "Guitar", "Vocal Performance", "Desi Indie", "Hindi & Punjabi Lyrics"],
     links: [
-      { label: "Instagram", href: "#", icon: Instagram },
+      { label: "Instagram @omkar.shanbhag", href: "https://instagram.com/omkar.shanbhag", icon: Instagram },
+      { label: "TikTok @omkar.shanbhag", href: "https://tiktok.com/@omkar.shanbhag", icon: Instagram },
       { label: "Listen", href: "#", icon: Music },
     ],
     selectedWork: [
-      { title: "Score Project", year: "2026", type: "Film", description: "Original score in development. To be announced." },
-      { title: "Instrumental Series", year: "2025", type: "Release", description: "Multi-part instrumental release with cohesive visual identity." },
+      { title: "Is Rah Pe", year: "2025", type: "Single", description: "His debut single. A song about self-discovery. The journey of doing something you love in spite of every voice telling you you're not ready. The melody makes you feel like you're on the move." },
+      { title: "TBD", year: "Coming Soon", type: "Single", description: "The next chapter. Coming soon." },
     ],
   },
 };
