@@ -201,33 +201,33 @@ const Home = () => {
       <MarqueeText items={marqueeItems} speed={25} />
 
       {/* About Rain Section */}
-      <section className="py-32 relative">
+      <section className="py-32 relative border-t border-border/40 bg-card/20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm text-muted-foreground">About Rain</span>
-            </div>
-            <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
-              Rain is a boutique creative strategy and branding studio built for musicians and artists who care about intention, identity, and long-term impact. We work closely with creatives to shape cohesive worlds through strategy, storytelling, and creative direction — supporting everything from visuals and content to culture and visibility.
-            </p>
-            <p className="text-lg text-muted-foreground italic">
-              At Rain, creativity is approached with care, clarity, and purpose.
-            </p>
-            <div className="mt-10">
+          <div className="max-w-4xl mx-auto">
+            <Card className="glass-card p-10 md:p-14 text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+                <Sparkles className="w-4 h-4 text-accent" />
+                <span className="text-sm text-muted-foreground">About Rain</span>
+              </div>
+              <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
+                Rain is a boutique creative strategy and branding studio built for musicians and artists who care about intention, identity, and long-term impact. We work closely with creatives to shape cohesive worlds through strategy, storytelling, and creative direction. From visuals and content to culture and visibility, we support every part of the journey.
+              </p>
+              <p className="text-lg text-muted-foreground italic mb-10">
+                At Rain, creativity is approached with care, clarity, and purpose.
+              </p>
               <Link to="/about">
                 <Button variant="outline" className="group glass-card hover-lift">
                   Learn More About Us
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
                 </Button>
               </Link>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} className="reveal py-32 relative">
+      <section ref={servicesRef} className="reveal py-32 relative border-t border-border/40">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
@@ -238,50 +238,26 @@ const Home = () => {
               What We <span className="text-gradient">Do</span>
             </h2>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {services.map((service, i) => (
-              <Card
-                key={i}
-                className="group p-8 glass-card hover-lift gradient-border overflow-hidden relative"
-                style={{ animationDelay: `${i * 0.2}s` }}
-              >
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                    <service.icon className="w-7 h-7 text-accent" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-accent transition-colors">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <ul className="space-y-3">
-                    {service.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-3 text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Card>
-            ))}
+
+          <div className="max-w-6xl mx-auto space-y-8">
+            {/* Row 1: 3 cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.slice(0, 3).map((service, i) => (
+                <ServiceCard key={i} service={service} index={i} />
+              ))}
+            </div>
+            {/* Row 2: 2 cards centered */}
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {services.slice(3, 5).map((service, i) => (
+                <ServiceCard key={i + 3} service={service} index={i + 3} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Featured Work */}
-      <section ref={workRef} className="reveal py-32 relative">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-card/30 to-transparent" />
-        
+      <section ref={workRef} className="reveal py-32 relative border-t border-border/40 bg-card/20">
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
             <div>
@@ -301,39 +277,36 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project, i) => (
-              <Link
-                key={project.id}
-                to={`/portfolio/${project.slug}`}
-                className="group block"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <Card className="overflow-hidden glass-card hover-lift">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {featuredProjects.map((project) => (
+              <CardContainer key={project.id} containerClassName="py-0">
+                <CardBody className="bg-card/60 glass-card relative group/card w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+                  <CardItem translateZ={50} className="text-xs uppercase tracking-[0.2em] text-accent">
+                    {project.category}
+                  </CardItem>
+                  <CardItem translateZ={60} as="h3" className="text-2xl font-display font-bold mt-2">
+                    {project.title}
+                  </CardItem>
+                  <CardItem translateZ={40} as="p" className="text-muted-foreground text-sm mt-2 max-w-sm">
+                    {project.description}
+                  </CardItem>
+                  <CardItem translateZ={100} className="w-full mt-4">
                     <img
                       src={project.image_url}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                      className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                     />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* Category badge */}
-                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full glass-card text-xs font-medium">
-                      {project.category}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="text-sm text-muted-foreground mb-2">
+                  </CardItem>
+                  <div className="flex justify-between items-center mt-6">
+                    <CardItem translateZ={20} as={Link} to={`/portfolio/${project.slug}`} className="px-4 py-2 rounded-xl text-xs font-normal">
+                      View profile →
+                    </CardItem>
+                    <CardItem translateZ={20} className="px-4 py-2 rounded-xl bg-accent text-accent-foreground text-xs font-bold">
                       {project.year}
-                    </div>
-                    <h3 className="text-xl font-display font-bold group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h3>
+                    </CardItem>
                   </div>
-                </Card>
-              </Link>
+                </CardBody>
+              </CardContainer>
             ))}
           </div>
         </div>
