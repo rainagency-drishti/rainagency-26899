@@ -92,7 +92,7 @@ const Home = () => {
     {
       icon: Palette,
       title: "Brand Strategy & Artist Development",
-      description: "For artists at the beginning of their journey or at a turning point — defining who you are and how it shows up.",
+      description: "For artists at the beginning of their journey or at a turning point. Defining who you are and how it shows up.",
       items: ["Brand Positioning", "Visual World-Building", "Brand Guidelines"]
     },
     {
