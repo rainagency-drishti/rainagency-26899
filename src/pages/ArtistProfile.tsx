@@ -115,7 +115,7 @@ const ArtistProfile = () => {
         {/* Hero */}
         <section className="container mx-auto px-6 pt-12 pb-20">
           <div className="max-w-4xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6">
+            <p className={`${isDoyel ? "text-xl" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6`}>
               Artist
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-[0.9] text-gradient">
