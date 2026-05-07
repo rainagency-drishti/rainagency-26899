@@ -92,8 +92,10 @@ const ArtistProfile = () => {
     );
   }
 
+  const isDoyel = artist.slug === "doyel-das";
+
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className={`min-h-screen bg-background relative ${isDoyel ? "doyel-theme" : ""}`}>
       <RainEffect />
       <FloatingOrbs />
       <Navigation />
