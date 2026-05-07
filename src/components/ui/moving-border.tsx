@@ -43,7 +43,7 @@ export const MovingBorderButton = React.forwardRef<
         />
         <div
           className="relative z-10 flex-1"
-          style={{ borderRadius: `calc(${borderRadius} - 1.5px)` }}
+          style={{ borderRadius: `calc(${borderRadius} - 2px)` }}
         >
           <Comp
             className={cn(
