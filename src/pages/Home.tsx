@@ -7,6 +7,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import MarqueeText from "@/components/MarqueeText";
 import RainEffect from "@/components/RainEffect";
 import { Button } from "@/components/ui/button";
+import { MovingBorderButton } from "@/components/ui/moving-border";
 import { Card } from "@/components/ui/card";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { ArrowRight, Sparkles, Layers, Zap, Palette, Globe } from "lucide-react";
@@ -208,16 +209,16 @@ const Home = () => {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link to="/portfolio">
-                <Button size="lg" className="group hover-lift">
+                <MovingBorderButton className="h-12 px-10 text-base group hover-lift bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-elevated">
                   View Our Work
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
-                </Button>
+                </MovingBorderButton>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="group glass-card hover-lift">
+                <MovingBorderButton className="h-12 px-10 text-base group hover-lift bg-background/50 backdrop-blur-xl hover:bg-accent hover:text-accent-foreground">
                   Get In Touch
                   <Zap className="ml-2 w-4 h-4 transition-transform group-hover:scale-110" />
-                </Button>
+                </MovingBorderButton>
               </Link>
             </div>
 
