@@ -209,16 +209,16 @@ const Home = () => {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link to="/portfolio">
-                <MovingBorderButton className="h-12 px-10 text-base group hover-lift bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-elevated">
+                <Button size="lg" className="h-12 px-10 text-base group hover-lift bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-elevated">
                   View Our Work
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
-                </MovingBorderButton>
+                </Button>
               </Link>
               <Link to="/contact">
-                <MovingBorderButton className="h-12 px-10 text-base group hover-lift bg-background/50 backdrop-blur-xl hover:bg-accent hover:text-accent-foreground">
+                <Button size="lg" variant="outline" className="h-12 px-10 text-base group hover-lift bg-background/50 backdrop-blur-xl hover:bg-accent hover:text-accent-foreground">
                   Get In Touch
                   <Zap className="ml-2 w-4 h-4 transition-transform group-hover:scale-110" />
-                </MovingBorderButton>
+                </Button>
               </Link>
             </div>
 
