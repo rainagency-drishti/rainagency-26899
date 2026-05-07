@@ -36,8 +36,9 @@ export const MovingBorderButton = React.forwardRef<
           style={{
             borderRadius,
             background:
-              "conic-gradient(from 0deg, transparent 0%, hsl(var(--accent)) 15%, hsl(var(--primary)) 35%, hsl(var(--accent)) 55%, transparent 75%)",
+              "conic-gradient(from 0deg, transparent 0%, hsl(var(--accent)) 10%, hsl(var(--primary-foreground)) 30%, hsl(var(--accent)) 50%, transparent 70%)",
             animation: `spin ${duration}ms linear infinite`,
+            filter: "blur(0.5px)",
           }}
         />
         <div
