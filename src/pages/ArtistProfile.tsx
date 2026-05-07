@@ -199,7 +199,7 @@ const ArtistProfile = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               {artist.selectedWork.map((work, i) => (
-                <Card key={i} className="glass-card overflow-hidden hover-lift gradient-border">
+                <Card key={i} className="glass-card overflow-hidden hover-lift gradient-border text-xl">
                   {work.image && (
                     <div className="aspect-square w-full overflow-hidden">
                       <img
