@@ -85,9 +85,9 @@ const Portfolio = () => {
         {/* Hero Section */}
         <section ref={heroRef} className="reveal container mx-auto px-6 pt-20 pb-16">
           <div className="max-w-4xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-accent mb-6 animate-fade-in">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight animate-fade-in">
               Meet the Artists
-            </p>
+            </h1>
           </div>
         </section>
 
