@@ -146,7 +146,7 @@ const ArtistProfile = () => {
 
             <aside className="space-y-8">
               <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-base font-extrabold">
                   Disciplines
                 </h3>
                 <ul className="space-y-2">
