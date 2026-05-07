@@ -28,7 +28,7 @@ const artists: Record<string, Artist> = {
   "doyel-das": {
     slug: "doyel-das",
     name: "Doyel Das",
-    tagline: "Singer, actor, and director. New York City.",
+    tagline: "Singer, Actor, and Director.",
     bio: [
       "There's a sound that old Bollywood had and largely abandoned. Retro, sultry, cinematic, glamorous, built on real instruments and real rooms. Doyel Das is bringing it back.",
       "Informed by 24 years of Hindustani classical training and shaped by the jazz, soul, and disco that defined an era of Hindi film music, she writes and sings entirely in Hindi with a full live band. Everything she makes is intentional, built for a big room, recorded with real people, designed to pull you somewhere specific.",
@@ -118,7 +118,7 @@ const ArtistProfile = () => {
         {/* Hero */}
         <section className="container mx-auto px-6 pt-12 pb-20">
           <div className="max-w-4xl">
-            <p className={`${isDoyel ? "text-xl" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6`}>
+            <p className={`${isDoyel ? "text-xl font-extrabold" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6`}>
               Artist
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-[0.9] text-gradient">
@@ -134,11 +134,11 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pb-24">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              <h2 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-lg font-extrabold">
                 Profile
               </h2>
               {artist.bio.map((para, i) => (
-                <p key={i} className="text-lg text-foreground/90 leading-relaxed">
+                <p key={i} className="text-foreground/90 leading-relaxed text-xl">
                   {para}
                 </p>
               ))}
@@ -146,7 +146,7 @@ const ArtistProfile = () => {
 
             <aside className="space-y-8">
               <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-base font-extrabold">
                   Disciplines
                 </h3>
                 <ul className="space-y-2">
@@ -160,7 +160,7 @@ const ArtistProfile = () => {
               </div>
 
               <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-base font-extrabold">
                   Links
                 </h3>
                 <div className="flex flex-col gap-3">
@@ -188,7 +188,7 @@ const ArtistProfile = () => {
           <div className="max-w-6xl">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-accent mb-3">
+                <p className="uppercase tracking-[0.3em] text-accent mb-3 text-lg font-extrabold">
                   Selected Work
                 </p>
                 <h2 className="text-4xl md:text-5xl font-display font-bold">
@@ -199,7 +199,7 @@ const ArtistProfile = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               {artist.selectedWork.map((work, i) => (
-                <Card key={i} className="glass-card overflow-hidden hover-lift gradient-border">
+                <Card key={i} className="glass-card overflow-hidden hover-lift gradient-border text-xl">
                   {work.image && (
                     <div className="aspect-square w-full overflow-hidden">
                       <img
