@@ -414,3 +414,46 @@ All colors MUST be HSL.
 .doyel-theme a {
   font-family: 'Cormorant Garamond', serif;
 }
+
+/* Omkar Shanbhag brand theme override */
+.omkar-theme {
+  --background: 40 27% 79%;
+  --foreground: 100 27% 20%;
+  --card: 40 22% 73%;
+  --card-foreground: 100 27% 20%;
+  --popover: 40 22% 73%;
+  --popover-foreground: 100 27% 20%;
+  --primary: 100 27% 20%;
+  --primary-foreground: 40 27% 88%;
+  --secondary: 22 39% 35%;
+  --secondary-foreground: 40 27% 88%;
+  --muted: 40 18% 70%;
+  --muted-foreground: 100 15% 30%;
+  --accent: 22 39% 35%;
+  --accent-foreground: 40 27% 88%;
+  --border: 80 12% 50%;
+  --input: 40 18% 70%;
+  --ring: 100 27% 20%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+.omkar-theme .font-display,
+.omkar-theme h1,
+.omkar-theme h2,
+.omkar-theme h3 {
+  font-family: 'Belleza', 'Red Hat Display', sans-serif !important;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+.omkar-theme p,
+.omkar-theme li,
+.omkar-theme span,
+.omkar-theme a {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.omkar-theme {
+  --gradient-text: linear-gradient(135deg, hsl(100 27% 20%) 0%, hsl(22 39% 35%) 100%);
+  --gradient-hero: linear-gradient(180deg, hsl(40 27% 79%) 0%, hsl(40 22% 73%) 100%);
+  --gradient-card: linear-gradient(135deg, hsl(40 22% 75%) 0%, hsl(40 18% 70%) 100%);
+}

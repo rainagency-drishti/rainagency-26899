@@ -59,8 +59,9 @@ const artists: Record<string, Artist> = {
     ],
     disciplines: ["Songwriting", "Guitar", "Vocal Performance", "Desi Indie"],
     links: [
-      { label: "Instagram @omkar.shanbhag", href: "https://instagram.com/omkar.shanbhag", icon: Instagram },
-      { label: "Instagram", href: "https://tiktok.com/@omkar.shanbhag", icon: Instagram },
+      { label: "Instagram", href: "https://instagram.com/omkar.shanbhag", icon: Instagram },
+      { label: "TikTok", href: "https://tiktok.com/@omkar.shanbhag", icon: TikTokIcon },
+      { label: "YouTube", href: "https://www.youtube.com/channel/UCCzzqi5V8P2kkFzSt_yRDyA", icon: Youtube },
       { label: "Listen", href: "#", icon: Music },
     ],
     selectedWork: [
@@ -93,9 +94,11 @@ const ArtistProfile = () => {
   }
 
   const isDoyel = artist.slug === "doyel-das";
+  const isOmkar = artist.slug === "omkar-shanbhag";
+  const themeClass = isDoyel ? "doyel-theme" : isOmkar ? "omkar-theme" : "";
 
   return (
-    <div className={`min-h-screen bg-background relative ${isDoyel ? "doyel-theme" : ""}`}>
+    <div className={`min-h-screen bg-background relative ${themeClass}`}>
       <RainEffect />
       <FloatingOrbs />
       <Navigation />
