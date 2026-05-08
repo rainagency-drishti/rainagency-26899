@@ -107,11 +107,11 @@ const ArtistProfile = () => {
 
       {isDoyel && (
         <>
-          <PlayingCardAccent rank="A" suit="♠" rotate={-12} className="top-32 -left-6 md:left-8 opacity-80" />
-          <PlayingCardAccent rank="K" suit="♥" rotate={15} className="top-[40%] -right-6 md:right-10 opacity-80" />
-          <PlayingCardAccent rank="Q" suit="♦" rotate={-8} className="top-[70%] left-4 md:left-16 opacity-70" />
-          <PlayingCardAccent rank="J" suit="♣" rotate={20} className="bottom-32 -right-4 md:right-12 opacity-70" />
-          <PlayingCardAccent rank="Q" suit="♥" rotate={8} className="top-56 right-2 md:right-8 opacity-90" />
+          <PlayingCardAccent rank="A" suit="♠" rotate={-12} className="top-32 -left-6 md:left-8 opacity-80" parallax={0.15} />
+          <PlayingCardAccent rank="K" suit="♥" rotate={15} className="top-[40%] -right-6 md:right-10 opacity-80" parallax={-0.2} />
+          <PlayingCardAccent rank="Q" suit="♦" rotate={-8} className="top-[70%] left-4 md:left-16 opacity-70" parallax={0.25} />
+          <PlayingCardAccent rank="J" suit="♣" rotate={20} className="bottom-32 -left-4 md:left-12 opacity-70" parallax={-0.3} />
+          <PlayingCardAccent rank="Q" suit="♥" rotate={8} className="top-56 right-2 md:right-8 opacity-90" parallax={0.18} />
         </>
       )}
 
