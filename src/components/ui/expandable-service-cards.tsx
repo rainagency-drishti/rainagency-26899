@@ -63,24 +63,25 @@ export default function ExpandableServiceCards({ cards }: { cards: ExpandableSer
 
       <AnimatePresence>
         {active && (
-          <div className="fixed inset-0 grid place-items-center z-50 p-4 overflow-y-auto">
-            <motion.div
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="relative w-full max-w-2xl my-auto max-h-[90vh] flex flex-col bg-card glass-card rounded-2xl overflow-hidden"
-            >
-              <motion.button
-                key={`close-${id}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0, transition: { duration: 0.05 } }}
-                className="flex absolute top-4 right-4 items-center justify-center bg-card hover:bg-accent hover:text-accent-foreground border border-border rounded-full h-9 w-9 z-50 shadow-lg transition-colors"
-                onClick={() => setActive(null)}
-                aria-label="Close"
+          <div className="fixed inset-0 z-50 overflow-y-auto overscroll-contain">
+            <div className="min-h-full flex items-start md:items-center justify-center p-4 py-8">
+              <motion.div
+                layoutId={`card-${active.title}-${id}`}
+                ref={ref}
+                className="relative w-full max-w-2xl flex flex-col bg-card glass-card rounded-2xl"
               >
-                <X className="h-4 w-4 text-foreground" />
-              </motion.button>
-              <div className="p-6 md:p-10 overflow-y-auto">
+                <motion.button
+                  key={`close-${id}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                  className="flex sticky top-4 ml-auto mr-4 -mb-9 items-center justify-center bg-card hover:bg-accent hover:text-accent-foreground border border-border rounded-full h-9 w-9 z-50 shadow-lg transition-colors"
+                  onClick={() => setActive(null)}
+                  aria-label="Close"
+                >
+                  <X className="h-4 w-4 text-foreground" />
+                </motion.button>
+                <div className="p-6 md:p-10">
                 <div className="flex items-start justify-between gap-6 mb-6">
                   <div className="flex-1">
                     <motion.span
