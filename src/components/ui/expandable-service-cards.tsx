@@ -136,8 +136,9 @@ export default function ExpandableServiceCards({ cards }: { cards: ExpandableSer
                 >
                   {active.note}
                 </motion.p>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         )}
       </AnimatePresence>
