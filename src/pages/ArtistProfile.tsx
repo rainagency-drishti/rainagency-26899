@@ -54,8 +54,7 @@ const artists: Record<string, Artist> = {
     name: "Omkar Shanbhag",
     tagline: "Singer-songwriter",
     bio: [
-      "Omkar Shanbhag started making music the way most people do, because he had to. Not because it was easy, or because it made sense, but because not doing it was worse. Music was something his parents pushed him toward growing up, which meant for a long time it felt like theirs, not his. That changed when he started singing for himself.",
-      "He picked up guitar in 2023 and something shifted. The self-worth stopped being tied to the mistakes. The point became learning, not performing competence. And songwriting, which he'd blocked for years because he didn't think he was good enough to do it, finally happened.",
+      "He picked up guitar in 2023 and something shifted. Songwriting, which he'd blocked for years because he didn't think he was good enough to do it, finally happened.",
       "His sound sits between the emotional depth of classic Bollywood and the intimacy of modern indie. Desi lyrics, minimal production, melody first. The kind of music that sounds like something you've heard before but can't quite place. Familiar in a way that gets under your skin. Think Daniel Caesar meets the nostalgia of a song your parents used to play, but it's yours.",
       "Rain built his complete brand identity. Visual world, narrative positioning, and creative direction for Is Raah Pe, so that everything he puts out feels as considered as the music itself.",
     ],
@@ -148,11 +147,11 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pb-24">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
             <div className="lg:col-span-2 space-y-6">
-               <h2 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl ${isDoyel ? "text-[#a51212]" : "text-[#7c4b36]"}`}>
+               <h2 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold ${isDoyel ? "text-xl text-[#a51212]" : "text-lg text-[#7c4b36]"}`}>
                 PROFILE
               </h2>
               {artist.bio.map((para, i) => (
-                <p key={i} className="text-foreground/90 leading-relaxed text-2xl">
+                <p key={i} className="text-foreground/90 leading-relaxed text-xl">
                   {para}
                 </p>
               ))}
