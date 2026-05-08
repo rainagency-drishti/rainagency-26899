@@ -136,6 +136,11 @@ const About = () => {
           </div>
         </section>
 
+        {/* Parallax single-row gallery between Approach and Founder */}
+        <section className="py-4 mb-24">
+          <ParallaxScrollSingleRow />
+        </section>
+
         {/* Founder Section */}
         <section id="founder" ref={founderRef} className="reveal container mx-auto px-6 mb-24">
           <div className="glass-card p-8 md:p-12 lg:p-16 rounded-2xl max-w-5xl mx-auto">
