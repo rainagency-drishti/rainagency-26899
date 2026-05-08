@@ -309,7 +309,8 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {featuredProjects.map((project) => (
               <CardContainer key={project.id} containerClassName="py-0">
-                <CardBody className="bg-card/60 glass-card relative group/card w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+                <Link to={`/portfolio/${project.slug}`} className="block">
+                <CardBody className="bg-card/60 glass-card relative group/card w-auto sm:w-[30rem] h-auto rounded-xl p-6 border cursor-pointer">
                   <CardItem translateZ={50} className="text-xs uppercase tracking-[0.2em] text-accent text-[#a51212]">
                     {project.category}
                   </CardItem>
@@ -335,6 +336,7 @@ const Home = () => {
                     </CardItem>
                   </div>
                 </CardBody>
+                </Link>
               </CardContainer>
             ))}
           </div>
@@ -349,7 +351,7 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-display font-bold mb-6 text-[#a51212]">
+          <h2 className="text-5xl md:text-7xl font-display font-bold mb-6 text-foreground">
             Ready to <span className="text-gradient">Stand Out</span>?
           </h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
