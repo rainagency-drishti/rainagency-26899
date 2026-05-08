@@ -209,7 +209,7 @@ const Home = () => {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Link to="/portfolio">
-                <Button size="lg" className="h-12 px-10 text-base group hover-lift bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-elevated">
+                <Button size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-elevated h-12 rounded-lg px-10 hover-lift text-lg font-bold">
                   View Our Work
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
                 </Button>
