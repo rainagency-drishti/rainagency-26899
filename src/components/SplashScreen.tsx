@@ -124,7 +124,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
               transition={{ delay: 1.2, duration: 0.5 }}
               className="mt-6 text-sm text-muted-foreground tracking-widest uppercase"
             >
-              Digital-first strategy + design
+              Creative strategy and branding studio
             </motion.p>
           </div>
         </motion.div>
