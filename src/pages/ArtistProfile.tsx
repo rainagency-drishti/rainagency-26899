@@ -118,10 +118,10 @@ const ArtistProfile = () => {
         {/* Hero */}
         <section className="container mx-auto px-6 pt-12 pb-20">
           <div className="max-w-4xl">
-            <p className={`${isDoyel ? "text-xl font-extrabold" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6`}>
+            <p className={`${isDoyel ? "text-xl font-extrabold" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6 text-[#a51212]`}>
               Artist
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-[0.9] text-gradient">
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-[0.9] text-gradient lg:text-9xl">
               {artist.name}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground italic max-w-2xl leading-relaxed">
@@ -134,11 +134,11 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pb-24">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-lg font-extrabold">
+              <h2 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#a51212]">
                 Profile
               </h2>
               {artist.bio.map((para, i) => (
-                <p key={i} className="text-foreground/90 leading-relaxed text-xl">
+                <p key={i} className="text-foreground/90 leading-relaxed text-2xl">
                   {para}
                 </p>
               ))}
@@ -146,10 +146,10 @@ const ArtistProfile = () => {
 
             <aside className="space-y-8">
               <div>
-                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-base font-extrabold">
+                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#a51212]">
                   Disciplines
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2 text-lg">
                   {artist.disciplines.map((d) => (
                     <li key={d} className="flex items-center gap-3 text-foreground">
                       <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -160,10 +160,10 @@ const ArtistProfile = () => {
               </div>
 
               <div>
-                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 text-base font-extrabold">
+                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#a51212]">
                   Links
                 </h3>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 text-lg">
                   {artist.links.map((link) => (
                     <a
                       key={link.label}
@@ -188,7 +188,7 @@ const ArtistProfile = () => {
           <div className="max-w-6xl">
             <div className="flex items-end justify-between mb-10">
               <div>
-                <p className="uppercase tracking-[0.3em] text-accent mb-3 text-lg font-extrabold">
+                <p className="uppercase tracking-[0.3em] text-accent mb-3 font-extrabold text-xl">
                   Selected Work
                 </p>
                 <h2 className="text-4xl md:text-5xl font-display font-bold">
