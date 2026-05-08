@@ -1,5 +1,5 @@
 "use client";
-import { ParallaxScroll } from "@/components/ui/parallax-scroll";
+import { ParallaxScroll, ParallaxRow } from "@/components/ui/parallax-scroll";
 
 const images = [
   "https://images.unsplash.com/photo-1554080353-a576cf803bda?w=800&q=80",
@@ -14,5 +14,9 @@ const images = [
 ];
 
 export default function ParallaxScrollDemo() {
-  return <ParallaxScroll images={images} />;
+  return <ParallaxScroll images={images} rows={2} />;
+}
+
+export function ParallaxScrollSingleRow() {
+  return <ParallaxRow images={images} direction="left" />;
 }

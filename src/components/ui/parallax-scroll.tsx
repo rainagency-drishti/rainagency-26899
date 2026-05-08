@@ -3,68 +3,67 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-export const ParallaxScroll = ({
-  images,
-  className,
-}: {
+interface ParallaxRowProps {
   images: string[];
+  direction?: "left" | "right";
   className?: string;
-}) => {
-  const gridRef = useRef<HTMLDivElement>(null);
+  imgClassName?: string;
+}
+
+export const ParallaxRow = ({
+  images,
+  direction = "left",
+  className,
+  imgClassName,
+}: ParallaxRowProps) => {
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    container: gridRef,
-    offset: ["start start", "end start"],
+    target: ref,
+    offset: ["start end", "end start"],
   });
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -150]);
-
-  const third = Math.ceil(images.length / 3);
-  const firstPart = images.slice(0, third);
-  const secondPart = images.slice(third, 2 * third);
-  const thirdPart = images.slice(2 * third);
+  const range = direction === "left" ? ["10%", "-25%"] : ["-25%", "10%"];
+  const x = useTransform(scrollYProgress, [0, 1], range);
 
   return (
     <div
-      ref={gridRef}
-      className={cn("h-[40rem] items-start overflow-y-auto w-full", className)}
+      ref={ref}
+      className={cn("relative w-full overflow-hidden py-2", className)}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-7xl mx-auto gap-10 py-10 px-6">
-        <div className="grid gap-10">
-          {firstPart.map((el, idx) => (
-            <motion.div style={{ y: translateFirst }} key={"grid-1" + idx}>
-              <img
-                src={el}
-                alt="gallery"
-                className="h-80 w-full object-cover object-left-top rounded-lg"
-              />
-            </motion.div>
-          ))}
-        </div>
-        <div className="grid gap-10">
-          {secondPart.map((el, idx) => (
-            <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-              <img
-                src={el}
-                alt="gallery"
-                className="h-80 w-full object-cover object-left-top rounded-lg"
-              />
-            </motion.div>
-          ))}
-        </div>
-        <div className="grid gap-10">
-          {thirdPart.map((el, idx) => (
-            <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-              <img
-                src={el}
-                alt="gallery"
-                className="h-80 w-full object-cover object-left-top rounded-lg"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      <motion.div style={{ x }} className="flex gap-6 w-max">
+        {[...images, ...images].map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt=""
+            className={cn(
+              "h-56 md:h-72 w-auto object-cover rounded-lg flex-shrink-0",
+              imgClassName,
+            )}
+          />
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+export const ParallaxScroll = ({
+  images,
+  className,
+  rows = 2,
+}: {
+  images: string[];
+  className?: string;
+  rows?: number;
+}) => {
+  const half = Math.ceil(images.length / 2);
+  const first = images.slice(0, half);
+  const second = images.slice(half);
+
+  return (
+    <div className={cn("w-full space-y-6", className)}>
+      <ParallaxRow images={first} direction="left" />
+      {rows > 1 && <ParallaxRow images={second} direction="right" />}
     </div>
   );
 };
