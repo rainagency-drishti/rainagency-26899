@@ -1,12 +1,13 @@
 interface PlayingCardAccentProps {
   rank: string;
-  suit: "♠" | "♥" | "♦" | "♣";
+  suit: string;
   className?: string;
   rotate?: number;
+  isRed?: boolean;
 }
 
-const PlayingCardAccent = ({ rank, suit, className = "", rotate = 0 }: PlayingCardAccentProps) => {
-  const isRed = suit === "♥" || suit === "♦";
+const PlayingCardAccent = ({ rank, suit, className = "", rotate = 0, isRed: isRedProp }: PlayingCardAccentProps) => {
+  const isRed = isRedProp ?? (suit === "♥" || suit === "♦");
   const suitColor = isRed ? "text-[#a51212]" : "text-[#e8d9a8]";
 
   return (

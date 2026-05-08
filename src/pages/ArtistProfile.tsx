@@ -110,6 +110,8 @@ const ArtistProfile = () => {
           <PlayingCardAccent rank="K" suit="♥" rotate={15} className="top-[40%] -right-6 md:right-10 opacity-80" />
           <PlayingCardAccent rank="Q" suit="♦" rotate={-8} className="top-[70%] left-4 md:left-16 opacity-70" />
           <PlayingCardAccent rank="J" suit="♣" rotate={20} className="bottom-32 -right-4 md:right-12 opacity-70" />
+          <PlayingCardAccent rank="JKR" suit="★" rotate={18} className="top-24 right-4 md:right-6 opacity-90" isRed />
+          <PlayingCardAccent rank="Q" suit="♥" rotate={-15} className="top-[55%] left-1/3 opacity-80" />
         </>
       )}
 
