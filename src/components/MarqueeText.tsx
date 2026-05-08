@@ -11,7 +11,7 @@ const MarqueeText = ({ items, direction = 'left', speed = 30 }: MarqueeTextProps
   };
 
   return (
-    <div className="overflow-hidden py-8 border-y border-border/50">
+    <div className="overflow-hidden py-5 border-y border-border/50">
       <div 
         className="flex whitespace-nowrap animate-marquee"
         style={animationStyle}
@@ -19,7 +19,7 @@ const MarqueeText = ({ items, direction = 'left', speed = 30 }: MarqueeTextProps
         {[...items, ...items].map((item, i) => (
           <span 
             key={i} 
-            className="mx-10 text-4xl md:text-6xl font-display font-bold text-muted-foreground/20 hover:text-accent/40 transition-colors duration-300"
+            className="mx-7 text-4xl md:text-6xl font-display font-bold text-muted-foreground/20 hover:text-accent/40 transition-colors duration-300"
           >
             {item}
           </span>
