@@ -58,6 +58,86 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
   </Link>
 );
 
+const AboutTeaser = () => {
+  const [visible, setVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 1200);
+    return () => clearTimeout(t);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="py-32 relative border-t border-border/40 bg-card/20"
+        >
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <motion.div layout className="glass-card rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => setExpanded((v) => !v)}
+                  className="w-full text-left p-10 md:p-14 flex flex-col gap-6 hover:bg-accent/5 transition-colors"
+                  aria-expanded={expanded}
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card self-start">
+                    <Sparkles className="w-4 h-4 text-accent" />
+                    <span className="text-sm text-muted-foreground">About Rain</span>
+                  </div>
+                  <div className="flex items-start justify-between gap-6">
+                    <p className="text-xl md:text-2xl text-foreground leading-relaxed flex-1">
+                      A boutique creative strategy and branding studio built for musicians and artists who care about intention, identity, and long-term impact.
+                    </p>
+                    <motion.div
+                      animate={{ rotate: expanded ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-2 flex-shrink-0 w-10 h-10 rounded-full glass-card flex items-center justify-center"
+                    >
+                      <ChevronDown className="w-5 h-5 text-accent" />
+                    </motion.div>
+                  </div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {expanded && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-10 md:px-14 pb-10 md:pb-14 space-y-6 border-t border-border/40 pt-8">
+                        <p className="text-lg text-foreground/90 leading-relaxed">
+                          We work closely with creatives to shape cohesive worlds through strategy, storytelling, and creative direction. From visuals and content to culture and visibility, we support every part of the journey.
+                        </p>
+                        <p className="text-lg text-muted-foreground italic">
+                          At Rain, creativity is approached with care, clarity, and purpose.
+                        </p>
+                        <Link to="/about">
+                          <Button variant="outline" className="group glass-card hover-lift mt-4">
+                            Read Rain's Full Story
+                            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+      )}
+    </AnimatePresence>
+  );
+};
+
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
