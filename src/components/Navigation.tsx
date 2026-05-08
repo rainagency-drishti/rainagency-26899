@@ -69,60 +69,47 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <div className="flex items-center gap-4 md:hidden">
               <ThemeToggle />
-              <button
-                onClick={toggleMenu}
-                className="p-2 text-foreground hover:text-primary transition-colors"
-                aria-label="Toggle menu"
-              >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger asChild>
+                  <button
+                    className="p-2 text-foreground hover:text-primary transition-colors"
+                    aria-label="Open menu"
+                  >
+                    <Menu className="w-6 h-6" />
+                  </button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-72 bg-background/95 backdrop-blur-lg border-l border-border p-0">
+                  <div className="flex flex-col h-full pt-20 px-6">
+                    <nav className="flex flex-col gap-2">
+                      {navItems.map((item, index) => (
+                        <motion.div
+                          key={item.path}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: 0.05 + index * 0.05 }}
+                        >
+                          <Link
+                            to={item.path}
+                            onClick={closeMenu}
+                            className={cn(
+                              "block py-3 px-4 rounded-lg text-xl font-display font-semibold transition-colors",
+                              location.pathname === item.path
+                                ? "bg-primary/10 text-primary"
+                                : "text-foreground hover:bg-muted hover:text-primary"
+                            )}
+                          >
+                            {item.name}
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </nav>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
       </nav>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg md:hidden"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="flex flex-col items-center justify-center h-full gap-8"
-            >
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.path}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
-                >
-                  <Link
-                    to={item.path}
-                    onClick={closeMenu}
-                    className={cn(
-                      "text-3xl font-display font-bold transition-colors hover:text-primary",
-                      location.pathname === item.path
-                        ? "text-primary"
-                        : "text-foreground"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 };
