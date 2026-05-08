@@ -114,7 +114,7 @@ const ArtistProfile = () => {
         </>
       )}
 
-      {isOmkar && <LeafField />}
+      
 
       <main className="pt-24 pb-20 relative z-10">
         {/* Back link */}
