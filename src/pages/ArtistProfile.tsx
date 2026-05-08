@@ -220,7 +220,7 @@ const ArtistProfile = () => {
                     <h3 className="text-2xl font-display font-semibold mb-3">
                       {work.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground mb-6 text-xl font-semibold leading-relaxed">
                       {work.description}
                     </p>
                   </div>
@@ -234,7 +234,7 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pt-24 text-center">
           <p className="text-muted-foreground mb-6">Interested in working with us?</p>
           <Link to="/contact">
-            <Button size="lg" className="hover-lift">
+            <Button size="lg" className="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-elevated h-12 rounded-lg px-10 hover-lift text-lg font-bold">
               Start a Conversation
             </Button>
           </Link>
