@@ -19,7 +19,7 @@ const Footer = () => {
           
           <div className="flex gap-6">
             <a
-              href="https://instagram.com/theraingency"
+              href="https://www.instagram.com/rainpresents/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
