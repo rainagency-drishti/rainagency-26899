@@ -28,31 +28,33 @@ interface Project {
 }
 
 const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-  <Card
-    className="group p-8 glass-card hover-lift gradient-border overflow-hidden relative"
-    style={{ animationDelay: `${index * 0.2}s` }}
-  >
-    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    <div className="relative z-10">
-      <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-        <service.icon className="w-7 h-7 text-accent" />
+  <Link to={service.href} className="block h-full">
+    <Card
+      className="group p-8 glass-card hover-lift gradient-border overflow-hidden relative h-full cursor-pointer"
+      style={{ animationDelay: `${index * 0.2}s` }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative z-10">
+        <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+          <service.icon className="w-7 h-7 text-accent" />
+        </div>
+        <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-accent transition-colors">
+          {service.title}
+        </h3>
+        <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+          {service.description}
+        </p>
+        <ul className="space-y-3">
+          {service.items.map((item: string, j: number) => (
+            <li key={j} className="flex items-center gap-3 text-muted-foreground">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
-      <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-accent transition-colors">
-        {service.title}
-      </h3>
-      <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-        {service.description}
-      </p>
-      <ul className="space-y-3">
-        {service.items.map((item: string, j: number) => (
-          <li key={j} className="flex items-center gap-3 text-muted-foreground">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </Card>
+    </Card>
+  </Link>
 );
 
 const Home = () => {
@@ -116,31 +118,36 @@ const Home = () => {
       icon: Sparkles,
       title: "Ongoing Creative & Brand Partnership",
       description: "An ongoing creative relationship for independent artists ready to build something real and lasting.",
-      items: ["Brand Strategy", "Creative Direction", "Social Media Management"]
+      items: ["Brand Strategy", "Creative Direction", "Social Media Management"],
+      href: "/services",
     },
     {
       icon: Palette,
       title: "Brand Strategy & Artist Development",
       description: "For artists at the beginning of their journey or at a turning point. Defining who you are and how it shows up.",
-      items: ["Brand Positioning", "Visual World-Building", "Brand Guidelines"]
+      items: ["Brand Positioning", "Visual World-Building", "Brand Guidelines"],
+      href: "/services#service-02",
     },
     {
       icon: Layers,
       title: "Creative Direction & Production",
       description: "Bringing a creative vision to life from concept to delivered assets, with every detail handled intentionally.",
-      items: ["Shoot Concepts", "Talent Coordination", "On-Set Direction"]
+      items: ["Shoot Concepts", "Talent Coordination", "On-Set Direction"],
+      href: "/services#service-03",
     },
     {
       icon: Globe,
       title: "Content Strategy & Social Media Management",
       description: "Consistent, strategic, on-brand social presence built around who you are as an artist.",
-      items: ["Content Calendar", "Publishing", "Performance Reporting"]
+      items: ["Content Calendar", "Publishing", "Performance Reporting"],
+      href: "/services#service-04",
     },
     {
       icon: Zap,
       title: "PR & Media Outreach",
       description: "Getting your music and your name in front of the right people through crafted story and real relationships.",
-      items: ["EPK Creation", "Media Outreach", "Placement Tracking"]
+      items: ["EPK Creation", "Media Outreach", "Placement Tracking"],
+      href: "/services#service-05",
     }
   ];
 

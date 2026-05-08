@@ -21,6 +21,20 @@ export default function ExpandableServiceCards({ cards }: { cards: ExpandableSer
   const id = useId();
 
   useEffect(() => {
+    const openFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (!hash) return;
+      const match = cards.find(
+        (c) => `service-${c.number}` === hash || c.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") === hash,
+      );
+      if (match) setActive(match);
+    };
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, [cards]);
+
+  useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setActive(null);
     };
