@@ -7,7 +7,7 @@ import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowUpRight } from "lucide-react";
-import ParallaxScrollDemo from "@/components/parallax-scroll-demo";
+import ParallaxScrollDemo, { ParallaxScrollSingleRow } from "@/components/parallax-scroll-demo";
 
 const About = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -134,6 +134,11 @@ const About = () => {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Parallax single-row gallery between Approach and Founder */}
+        <section className="py-4 mb-24">
+          <ParallaxScrollSingleRow />
         </section>
 
         {/* Founder Section */}
