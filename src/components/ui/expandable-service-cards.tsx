@@ -63,24 +63,23 @@ export default function ExpandableServiceCards({ cards }: { cards: ExpandableSer
 
       <AnimatePresence>
         {active && (
-          <div className="fixed inset-0 grid place-items-center z-50 p-4">
-            <motion.button
-              key={`close-${id}`}
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.05 } }}
-              className="flex absolute top-6 right-6 items-center justify-center bg-card hover:bg-accent hover:text-accent-foreground border border-border rounded-full h-9 w-9 z-50 shadow-lg transition-colors"
-              onClick={() => setActive(null)}
-              aria-label="Close"
-            >
-              <X className="h-4 w-4 text-foreground" />
-            </motion.button>
+          <div className="fixed inset-0 grid place-items-center z-50 p-4 overflow-y-auto">
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-2xl h-full md:h-fit md:max-h-[90vh] flex flex-col bg-card glass-card rounded-2xl overflow-hidden"
+              className="relative w-full max-w-2xl my-auto max-h-[90vh] flex flex-col bg-card glass-card rounded-2xl overflow-hidden"
             >
+              <motion.button
+                key={`close-${id}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                className="flex absolute top-4 right-4 items-center justify-center bg-card hover:bg-accent hover:text-accent-foreground border border-border rounded-full h-9 w-9 z-50 shadow-lg transition-colors"
+                onClick={() => setActive(null)}
+                aria-label="Close"
+              >
+                <X className="h-4 w-4 text-foreground" />
+              </motion.button>
               <div className="p-6 md:p-10 overflow-y-auto">
                 <div className="flex items-start justify-between gap-6 mb-6">
                   <div className="flex-1">
