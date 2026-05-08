@@ -181,7 +181,7 @@ const Services = () => {
                 More ways to work together
               </h2>
             </div>
-            <FeaturesSection features={otherServices} />
+            <ExpandableServiceCards cards={otherServices} />
           </motion.div>
 
           {/* Closing Section */}
