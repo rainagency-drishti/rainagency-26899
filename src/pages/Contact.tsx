@@ -112,7 +112,7 @@ const Contact = () => {
                 </h3>
                 <div className="flex gap-3">
                   <Link
-                    to="https://instagram.com"
+                    to="https://www.instagram.com/rainpresents/"
                     target="_blank"
                     className="group p-4 glass-card hover:border-accent/50 transition-all duration-300"
                   >
