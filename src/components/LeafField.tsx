@@ -79,14 +79,21 @@ const LeafField = () => {
                 transition: "transform 0.05s linear",
               }}
             >
-              <img
-                src={leafImg}
-                alt=""
-                loading="lazy"
+              <div
+                aria-hidden
                 style={
                   {
                     width: "100%",
-                    height: "auto",
+                    paddingBottom: "100%",
+                    backgroundColor: "#264025",
+                    WebkitMaskImage: `url(${leafImg})`,
+                    maskImage: `url(${leafImg})`,
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "contain",
+                    maskSize: "contain",
+                    WebkitMaskPosition: "center",
+                    maskPosition: "center",
                     opacity: leaf.opacity,
                     filter: `blur(${leaf.blur}px)`,
                     "--sway-from": swayFrom,
