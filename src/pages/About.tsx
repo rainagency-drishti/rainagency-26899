@@ -7,6 +7,7 @@ import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowUpRight } from "lucide-react";
+import ParallaxScrollDemo from "@/components/parallax-scroll-demo";
 
 const About = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -43,6 +44,11 @@ const About = () => {
               Rain is a boutique creative studio for independent musicians and artists. We exist for the ones who are serious about their craft and need someone equally serious about their brand. Strategy, identity, creative direction, social, PR. We handle the full picture so nothing gets diluted and nothing falls through.
             </p>
           </div>
+        </section>
+
+        {/* Parallax photo gallery */}
+        <section className="py-4">
+          <ParallaxScrollDemo />
         </section>
 
         {/* Mission & Name Section */}
