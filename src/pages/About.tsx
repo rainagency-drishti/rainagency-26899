@@ -48,7 +48,7 @@ const About = () => {
 
         {/* Parallax photo gallery */}
         <section className="py-4">
-          <ParallaxScrollDemo />
+          <ParallaxScrollSingleRow />
         </section>
 
         {/* Mission & Name Section */}
