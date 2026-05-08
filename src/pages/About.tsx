@@ -8,6 +8,7 @@ import FloatingOrbs from "@/components/FloatingOrbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowUpRight } from "lucide-react";
 import { GalleryRowTop, GalleryRowBottom } from "@/components/parallax-scroll-demo";
+import drishtiPortrait from "@/assets/drishti-portrait.jpg";
 
 const About = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -147,10 +148,12 @@ const About = () => {
             <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
               {/* Founder Photo */}
               <div className="flex-shrink-0">
-                <div className="w-36 h-36 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 border border-primary/20 flex items-center justify-center overflow-hidden">
-                  <span className="text-5xl md:text-6xl text-primary/30 font-display font-bold">
-                    DD
-                  </span>
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-2xl border border-primary/20 overflow-hidden">
+                  <img
+                    src={drishtiPortrait}
+                    alt="Drishti Das, founder of Rain"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
