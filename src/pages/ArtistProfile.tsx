@@ -67,7 +67,7 @@ const artists: Record<string, Artist> = {
       { label: "Listen", href: "#", icon: Music },
     ],
     selectedWork: [
-      { title: "Is Rah Pe", year: "2025", type: "Single", image: "/artists/is-rah-pe.png", description: "His debut single. A song about self-discovery. The journey of doing something you love in spite of every voice telling you you're not ready. The melody makes you feel like you're on the move." },
+      { title: "Is Raah Pe", year: "2025", type: "Single", image: "/artists/is-rah-pe.png", description: "His debut single. A song about self-discovery. The journey of doing something you love in spite of every voice telling you you're not ready. The melody makes you feel like you're on the move." },
       { title: "TBD", year: "Coming Soon", type: "Single", description: "The next chapter. Coming soon." },
     ],
   },
@@ -111,18 +111,45 @@ const ArtistProfile = () => {
           <PlayingCardAccent rank="K" suit="♥" rotate={15} className="top-[40%] -right-6 md:right-10 opacity-80" />
           <PlayingCardAccent rank="Q" suit="♦" rotate={-8} className="top-[70%] left-4 md:left-16 opacity-70" />
           <PlayingCardAccent rank="J" suit="♣" rotate={20} className="bottom-32 -right-4 md:right-12 opacity-70" />
-          <PlayingCardAccent rank="Q" suit="♥" rotate={12} className="top-40 right-6 md:right-16 opacity-90" />
+          <PlayingCardAccent rank="Q" suit="♥" rotate={8} className="top-56 right-2 md:right-8 opacity-90" />
         </>
       )}
 
       {isOmkar && (
         <>
-          <GreeneryAccent variant="fern" rotate={-20} size={140} className="top-28 -left-6 md:left-6 opacity-70" />
-          <GreeneryAccent variant="vine" rotate={10} size={160} className="top-36 right-4 md:right-10 opacity-60" />
-          <GreeneryAccent variant="sprig" rotate={25} size={120} className="top-[55%] -left-4 md:left-10 opacity-65" />
-          <GreeneryAccent variant="leaf" rotate={-15} size={110} className="top-[60%] right-6 md:right-16 opacity-70" />
-          <GreeneryAccent variant="fern" rotate={45} size={130} className="bottom-24 left-1/4 opacity-55" />
-          <GreeneryAccent variant="sprig" rotate={-30} size={140} className="bottom-32 -right-4 md:right-8 opacity-65" />
+          {/* Themed leafy texture overlay */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-screen"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%235a8c5a' stroke-width='1'><path d='M20 80 Q 40 50, 60 80 T 100 80 T 140 80'/><ellipse cx='35' cy='65' rx='6' ry='3' transform='rotate(-30 35 65)' fill='%235a8c5a'/><ellipse cx='75' cy='65' rx='6' ry='3' transform='rotate(30 75 65)' fill='%235a8c5a'/><ellipse cx='115' cy='65' rx='6' ry='3' transform='rotate(-30 115 65)' fill='%235a8c5a'/><path d='M80 20 Q 80 60, 80 100' /><path d='M80 30 Q 70 35, 65 45 M80 45 Q 90 50, 95 60 M80 60 Q 70 65, 65 75'/></g></svg>\")",
+              backgroundSize: "240px 240px",
+            }}
+          />
+          {/* Soft green ambient gradient */}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(90,140,90,0.18),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(45,90,61,0.22),transparent_60%)]" />
+
+          {/* Top region — lush canopy */}
+          <GreeneryAccent variant="fern" rotate={-25} size={180} className="top-20 -left-8 md:left-2 opacity-80" />
+          <GreeneryAccent variant="vine" rotate={8} size={200} className="top-24 right-2 md:right-8 opacity-75" />
+          <GreeneryAccent variant="leaf" rotate={35} size={90} className="top-44 left-1/3 opacity-60" />
+          <GreeneryAccent variant="sprig" rotate={-15} size={110} className="top-56 left-10 opacity-70" />
+          <GreeneryAccent variant="leaf" rotate={-40} size={80} className="top-72 right-1/3 opacity-65" />
+
+          {/* Middle region */}
+          <GreeneryAccent variant="sprig" rotate={20} size={140} className="top-[42%] -left-4 md:left-6 opacity-75" />
+          <GreeneryAccent variant="fern" rotate={-10} size={150} className="top-[45%] right-2 md:right-12 opacity-70" />
+          <GreeneryAccent variant="vine" rotate={-20} size={170} className="top-[55%] left-1/4 opacity-55" />
+          <GreeneryAccent variant="leaf" rotate={50} size={100} className="top-[58%] right-1/4 opacity-65" />
+          <GreeneryAccent variant="sprig" rotate={-45} size={120} className="top-[68%] right-8 opacity-70" />
+
+          {/* Lower region */}
+          <GreeneryAccent variant="fern" rotate={40} size={160} className="bottom-40 left-1/5 opacity-65" />
+          <GreeneryAccent variant="leaf" rotate={-25} size={120} className="bottom-48 left-2/3 opacity-70" />
+          <GreeneryAccent variant="sprig" rotate={-30} size={160} className="bottom-24 -right-4 md:right-6 opacity-75" />
+          <GreeneryAccent variant="vine" rotate={15} size={180} className="bottom-16 -left-6 md:left-4 opacity-65" />
+          <GreeneryAccent variant="leaf" rotate={70} size={90} className="bottom-64 right-12 opacity-60" />
+          <GreeneryAccent variant="sprig" rotate={10} size={100} className="bottom-8 left-1/2 opacity-65" />
         </>
       )}
 
