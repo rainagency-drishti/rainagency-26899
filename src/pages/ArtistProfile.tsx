@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import PlayingCardAccent from "@/components/PlayingCardAccent";
-import leafImg from "@/assets/leaf.png";
+import LeafField from "@/components/LeafField";
 import Footer from "@/components/Footer";
 import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
@@ -115,45 +115,7 @@ const ArtistProfile = () => {
         </>
       )}
 
-      {isOmkar && (
-        <>
-          {[
-            { top: "5%", left: "2%", size: 90, rotate: -20, opacity: 0.85 },
-            { top: "8%", right: "4%", size: 110, rotate: 25, opacity: 0.8 },
-            { top: "16%", left: "38%", size: 70, rotate: 45, opacity: 0.7 },
-            { top: "22%", right: "30%", size: 95, rotate: -35, opacity: 0.75 },
-            { top: "28%", left: "8%", size: 80, rotate: 60, opacity: 0.7 },
-            { top: "34%", right: "12%", size: 120, rotate: -10, opacity: 0.85 },
-            { top: "40%", left: "45%", size: 75, rotate: 15, opacity: 0.7 },
-            { top: "46%", left: "3%", size: 100, rotate: -50, opacity: 0.8 },
-            { top: "52%", right: "6%", size: 90, rotate: 30, opacity: 0.75 },
-            { top: "58%", left: "25%", size: 85, rotate: -25, opacity: 0.7 },
-            { top: "64%", right: "35%", size: 105, rotate: 55, opacity: 0.8 },
-            { top: "70%", left: "10%", size: 95, rotate: -40, opacity: 0.75 },
-            { top: "76%", right: "8%", size: 110, rotate: 20, opacity: 0.85 },
-            { top: "82%", left: "40%", size: 80, rotate: -15, opacity: 0.7 },
-            { top: "88%", left: "5%", size: 100, rotate: 35, opacity: 0.8 },
-            { top: "92%", right: "20%", size: 90, rotate: -55, opacity: 0.75 },
-          ].map((pos, i) => (
-            <img
-              key={i}
-              src={leafImg}
-              alt=""
-              aria-hidden
-              className="pointer-events-none select-none absolute"
-              style={{
-                top: pos.top,
-                left: (pos as any).left,
-                right: (pos as any).right,
-                width: pos.size,
-                height: "auto",
-                transform: `rotate(${pos.rotate}deg)`,
-                opacity: pos.opacity,
-              }}
-            />
-          ))}
-        </>
-      )}
+      {isOmkar && <LeafField />}
 
       <main className="pt-24 pb-20 relative z-10">
         {/* Back link */}
