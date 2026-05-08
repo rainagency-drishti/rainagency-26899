@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import PlayingCardAccent from "@/components/PlayingCardAccent";
+import GreeneryAccent from "@/components/GreeneryAccent";
 import Footer from "@/components/Footer";
 import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
@@ -111,6 +112,17 @@ const ArtistProfile = () => {
           <PlayingCardAccent rank="Q" suit="♦" rotate={-8} className="top-[70%] left-4 md:left-16 opacity-70" />
           <PlayingCardAccent rank="J" suit="♣" rotate={20} className="bottom-32 -right-4 md:right-12 opacity-70" />
           <PlayingCardAccent rank="Q" suit="♥" rotate={12} className="top-40 right-6 md:right-16 opacity-90" />
+        </>
+      )}
+
+      {isOmkar && (
+        <>
+          <GreeneryAccent variant="fern" rotate={-20} size={140} className="top-28 -left-6 md:left-6 opacity-70" />
+          <GreeneryAccent variant="vine" rotate={10} size={160} className="top-36 right-4 md:right-10 opacity-60" />
+          <GreeneryAccent variant="sprig" rotate={25} size={120} className="top-[55%] -left-4 md:left-10 opacity-65" />
+          <GreeneryAccent variant="leaf" rotate={-15} size={110} className="top-[60%] right-6 md:right-16 opacity-70" />
+          <GreeneryAccent variant="fern" rotate={45} size={130} className="bottom-24 left-1/4 opacity-55" />
+          <GreeneryAccent variant="sprig" rotate={-30} size={140} className="bottom-32 -right-4 md:right-8 opacity-65" />
         </>
       )}
 
