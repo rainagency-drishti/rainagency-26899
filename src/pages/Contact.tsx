@@ -126,7 +126,7 @@ const Contact = () => {
                     <Linkedin className="w-5 h-5 group-hover:text-accent transition-colors" />
                   </Link>
                   <Link
-                    to="https://tiktok.com"
+                    to="https://www.tiktok.com/@rain.presents"
                     target="_blank"
                     aria-label="TikTok"
                     className="group p-4 glass-card hover:border-accent/50 transition-all duration-300"
