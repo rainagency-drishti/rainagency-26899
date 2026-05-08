@@ -118,13 +118,13 @@ const ArtistProfile = () => {
         {/* Hero */}
         <section className="container mx-auto px-6 pt-12 pb-20">
           <div className="max-w-4xl">
-            <p className={`${isDoyel ? "text-xl font-extrabold" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6 text-[#a51212]`}>
+            <p className={`${isDoyel ? "text-xl font-extrabold" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6 text-[#7c4b36] text-xl font-bold`}>
               Artist
             </p>
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-[0.9] text-gradient lg:text-9xl">
               {artist.name}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground italic max-w-2xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground italic max-w-2xl leading-relaxed text-[#7c4b36] font-semibold">
               {artist.tagline}
             </p>
           </div>
@@ -134,8 +134,8 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pb-24">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#a51212]">
-                Profile
+               <h2 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#7c4b36]">
+                PROFILE
               </h2>
               {artist.bio.map((para, i) => (
                 <p key={i} className="text-foreground/90 leading-relaxed text-2xl">
@@ -146,8 +146,8 @@ const ArtistProfile = () => {
 
             <aside className="space-y-8">
               <div>
-                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#a51212]">
-                  Disciplines
+                 <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#7c4b36]">
+                  DISCIPLINES
                 </h3>
                 <ul className="space-y-2 text-lg">
                   {artist.disciplines.map((d) => (
@@ -160,8 +160,8 @@ const ArtistProfile = () => {
               </div>
 
               <div>
-                <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#a51212]">
-                  Links
+                 <h3 className="uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl text-[#7c4b36]">
+                  LINKS
                 </h3>
                 <div className="flex flex-col gap-3 text-lg">
                   {artist.links.map((link) => (
