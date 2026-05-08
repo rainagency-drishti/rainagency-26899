@@ -6,6 +6,7 @@ import rainLogoLight from "@/assets/rain-logo-hero-light.png";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navigation = () => {
   const location = useLocation();
