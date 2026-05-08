@@ -19,7 +19,7 @@ const MarqueeText = ({ items, direction = 'left', speed = 30 }: MarqueeTextProps
         {[...items, ...items].map((item, i) => (
           <span 
             key={i} 
-            className="mx-12 text-6xl md:text-8xl font-display font-bold text-muted-foreground/20 hover:text-accent/40 transition-colors duration-300"
+            className="mx-10 text-4xl md:text-6xl font-display font-bold text-muted-foreground/20 hover:text-accent/40 transition-colors duration-300"
           >
             {item}
           </span>
