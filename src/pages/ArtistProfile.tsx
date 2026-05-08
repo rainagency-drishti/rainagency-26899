@@ -122,7 +122,7 @@ const ArtistProfile = () => {
         <div className="container mx-auto px-6 pt-12">
           <Link
             to="/portfolio"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors text-xl"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to all artists
