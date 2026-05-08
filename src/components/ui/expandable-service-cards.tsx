@@ -70,7 +70,7 @@ export default function ExpandableServiceCards({ cards }: { cards: ExpandableSer
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.05 } }}
-              className="flex absolute top-4 right-4 lg:hidden items-center justify-center bg-card rounded-full h-8 w-8 z-50"
+              className="flex absolute top-6 right-6 items-center justify-center bg-card hover:bg-accent hover:text-accent-foreground border border-border rounded-full h-9 w-9 z-50 shadow-lg transition-colors"
               onClick={() => setActive(null)}
               aria-label="Close"
             >
