@@ -7,7 +7,7 @@ import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowUpRight } from "lucide-react";
-import { GalleryRowTop, GalleryRowBottom } from "@/components/parallax-scroll-demo";
+import { GalleryRowTop, GalleryRowMiddle, GalleryRowBottom } from "@/components/parallax-scroll-demo";
 import drishtiPortrait from "@/assets/drishti-portrait.jpg";
 
 const About = () => {
@@ -90,6 +90,11 @@ const About = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Parallax gallery row between Mission and Approach */}
+        <section className="py-4 mb-24">
+          <GalleryRowMiddle />
         </section>
 
         {/* The Approach */}
