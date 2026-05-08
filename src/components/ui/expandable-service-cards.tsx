@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { X, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -64,12 +64,17 @@ export default function ExpandableServiceCards({ cards }: { cards: ExpandableSer
       }
     };
 
+    let timeoutId: number | undefined;
+
     const frame = window.requestAnimationFrame(() => {
       scrollToExpandedCard();
-      window.setTimeout(scrollToExpandedCard, 250);
+      timeoutId = window.setTimeout(scrollToExpandedCard, 250);
     });
 
-    return () => window.cancelAnimationFrame(frame);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
   }, [active]);
 
   return (
