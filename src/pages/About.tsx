@@ -93,6 +93,52 @@ const About = () => {
         </section>
 
 
+        {/* Founder Section */}
+        <section id="founder" ref={founderRef} className="reveal container mx-auto px-6 mb-24">
+          <div className="glass-card p-8 md:p-12 lg:p-16 rounded-2xl max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+              {/* Founder Photo */}
+              <div className="flex-shrink-0">
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-2xl border border-primary/20 overflow-hidden">
+                  <img
+                    src={drishtiPortrait}
+                    alt="Drishti Das, founder of Rain"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Founder Info */}
+              <div className="flex-1">
+                <p className="text-xs uppercase tracking-[0.2em] text-accent mb-3">
+                  Founder & Creative Director
+                </p>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+                  Drishti Das
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Drishti Das is the founder and creative director of Rain. She started the agency
+                    after watching too many talented independent artists spend more time figuring out
+                    how to market themselves than actually making music. Rain was built to change that.
+                  </p>
+                  <p>
+                    She works across brand strategy, creative direction, and artist development,
+                    helping artists build not just a look, but a world. She believes the best creative
+                    work happens when an artist fully understands who they are, and her job is to help
+                    get them there.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Parallax single-row gallery */}
+        <section className="py-4 mb-24">
+          <GalleryRowBottom />
+        </section>
+
         {/* The Approach */}
         <section id="approach" ref={approachRef} className="reveal container mx-auto px-6 mb-24">
           <div className="max-w-5xl mx-auto">
@@ -134,52 +180,6 @@ const About = () => {
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Parallax single-row gallery between Approach and Founder */}
-        <section className="py-4 mb-24">
-          <GalleryRowBottom />
-        </section>
-
-        {/* Founder Section */}
-        <section id="founder" ref={founderRef} className="reveal container mx-auto px-6 mb-24">
-          <div className="glass-card p-8 md:p-12 lg:p-16 rounded-2xl max-w-5xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
-              {/* Founder Photo */}
-              <div className="flex-shrink-0">
-                <div className="w-36 h-36 md:w-48 md:h-48 rounded-2xl border border-primary/20 overflow-hidden">
-                  <img
-                    src={drishtiPortrait}
-                    alt="Drishti Das, founder of Rain"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              
-              {/* Founder Info */}
-              <div className="flex-1">
-                <p className="text-xs uppercase tracking-[0.2em] text-accent mb-3">
-                  Founder & Creative Director
-                </p>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-                  Drishti Das
-                </h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Drishti Das is the founder and creative director of Rain. She started the agency
-                    after watching too many talented independent artists spend more time figuring out
-                    how to market themselves than actually making music. Rain was built to change that.
-                  </p>
-                  <p>
-                    She works across brand strategy, creative direction, and artist development,
-                    helping artists build not just a look, but a world. She believes the best creative
-                    work happens when an artist fully understands who they are, and her job is to help
-                    get them there.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
