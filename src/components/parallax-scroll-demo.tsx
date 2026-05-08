@@ -7,10 +7,14 @@ import img4 from "@/assets/gallery/img4.jpg";
 import img5 from "@/assets/gallery/img5.jpg";
 import img6 from "@/assets/gallery/img6.jpg";
 import img7 from "@/assets/gallery/img7.jpg";
+import img8 from "@/assets/gallery/img8.jpg";
+import img9 from "@/assets/gallery/img9.jpg";
+import img10 from "@/assets/gallery/img10.jpg";
+import img11 from "@/assets/gallery/img11.jpg";
 
 // Two distinct shuffled subsets so each row has different photos
-const rowA = [img3, img1, img6, img4, img7];
-const rowB = [img2, img5, img7, img3, img1];
+const rowA = [img3, img1, img8, img6, img10, img4, img7, img11];
+const rowB = [img9, img2, img11, img5, img7, img3, img8, img1];
 
 export function GalleryRowTop() {
   return <ParallaxRow images={rowA} direction="left" />;
