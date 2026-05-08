@@ -1,0 +1,30 @@
+interface PlayingCardAccentProps {
+  rank: string;
+  suit: "♠" | "♥" | "♦" | "♣";
+  className?: string;
+  rotate?: number;
+}
+
+const PlayingCardAccent = ({ rank, suit, className = "", rotate = 0 }: PlayingCardAccentProps) => {
+  const isRed = suit === "♥" || suit === "♦";
+  const suitColor = isRed ? "text-[#a51212]" : "text-[#e8d9a8]";
+
+  return (
+    <div
+      className={`pointer-events-none select-none absolute aspect-[2.5/3.5] w-24 md:w-32 rounded-lg bg-black border border-[#a51212]/40 shadow-[0_0_30px_rgba(165,18,18,0.25)] flex flex-col justify-between p-2 md:p-3 ${className}`}
+      style={{ transform: `rotate(${rotate}deg)` }}
+    >
+      <div className={`flex flex-col items-start leading-none ${suitColor}`}>
+        <span className="font-display font-bold text-lg md:text-xl">{rank}</span>
+        <span className="text-base md:text-lg">{suit}</span>
+      </div>
+      <div className={`text-3xl md:text-5xl text-center ${suitColor}`}>{suit}</div>
+      <div className={`flex flex-col items-end leading-none rotate-180 ${suitColor}`}>
+        <span className="font-display font-bold text-lg md:text-xl">{rank}</span>
+        <span className="text-base md:text-lg">{suit}</span>
+      </div>
+    </div>
+  );
+};
+
+export default PlayingCardAccent;
