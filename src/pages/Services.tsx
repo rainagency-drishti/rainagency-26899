@@ -6,7 +6,7 @@ import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Droplets, Compass, Camera, CalendarDays, Megaphone } from "lucide-react";
-import FeaturesSection, { type FeatureItem } from "@/components/ui/features-section";
+import ExpandableServiceCards, { type ExpandableServiceCard } from "@/components/ui/expandable-service-cards";
 
 const Services = () => {
   const flagship = {
@@ -27,29 +27,68 @@ const Services = () => {
     note: "Offered on a monthly retainer. Availability is limited to ensure every client gets the depth and attention they deserve. Pricing is based on scope and level of involvement.",
   };
 
-  const otherServices: FeatureItem[] = [
+  const otherServices: ExpandableServiceCard[] = [
     {
+      number: "02",
       title: "Brand Strategy & Artist Development",
+      subtitle: "For Clarity and Creative Foundation",
       description:
         "For artists at the beginning of their journey or at a turning point. Who you are, what you stand for, and how that translates into everything you put out.",
+      items: [
+        "Brand positioning and narrative development",
+        "Visual world-building and aesthetic direction",
+        "Messaging and tone of voice",
+        "Target audience definition",
+        "Brand guidelines document",
+      ],
+      note: "Offered as a standalone project. Pricing is determined by scope. The foundation everything else builds on.",
       icon: Compass,
     },
     {
+      number: "03",
       title: "Creative Direction & Production",
+      subtitle: "From Idea to Execution",
       description:
         "Bringing a creative vision to life from concept to delivered assets. Every detail handled with intention.",
+      items: [
+        "Shoot concept and shot list development",
+        "Location scouting and booking",
+        "Talent coordination including photographer, videographer, hair, makeup, and wardrobe",
+        "On-set creative direction and production",
+        "Post-production oversight and delivery",
+      ],
+      note: "Offered as a standalone project. Pricing is determined by scope and production needs.",
       icon: Camera,
     },
     {
-      title: "Content Strategy & Social Media",
+      number: "04",
+      title: "Content Strategy & Social Media Management",
+      subtitle: "For Your Social Presence",
       description:
         "Consistent, strategic, and on-brand social media presence built around who you are as an artist. No generic content, everything is intentional.",
+      items: [
+        "Platform-specific strategy",
+        "Monthly content calendar",
+        "Post scheduling and publishing",
+        "Community engagement",
+        "Monthly performance tracking and reporting",
+      ],
+      note: "Offered as a standalone monthly service or as part of a retainer. Pricing is based on platforms and posting frequency.",
       icon: CalendarDays,
     },
     {
+      number: "05",
       title: "PR & Media Outreach",
+      subtitle: "For Visibility and Reach",
       description:
         "Getting your music and your name in front of the right people. From crafting your story to building the relationships that open doors.",
+      items: [
+        "EPK creation and customization per release",
+        "Media, blog, and playlist contact outreach",
+        "Press and placement tracking",
+        "Follow-up cadence and relationship management",
+      ],
+      note: "Offered as a standalone project or as part of a retainer. Pricing is based on scope and campaign size.",
       icon: Megaphone,
     },
   ];
