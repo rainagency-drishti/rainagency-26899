@@ -147,11 +147,11 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pb-24">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
             <div className="lg:col-span-2 space-y-6">
-               <h2 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl ${isDoyel ? "text-[#a51212]" : "text-[#7c4b36]"}`}>
+               <h2 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold ${isDoyel ? "text-xl text-[#a51212]" : "text-lg text-[#7c4b36]"}`}>
                 PROFILE
               </h2>
               {artist.bio.map((para, i) => (
-                <p key={i} className="text-foreground/90 leading-relaxed text-2xl">
+                <p key={i} className="text-foreground/90 leading-relaxed text-xl">
                   {para}
                 </p>
               ))}
