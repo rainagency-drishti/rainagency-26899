@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import PlayingCardAccent from "@/components/PlayingCardAccent";
 import Footer from "@/components/Footer";
 import RainEffect from "@/components/RainEffect";
 import FloatingOrbs from "@/components/FloatingOrbs";
@@ -98,10 +99,19 @@ const ArtistProfile = () => {
   const themeClass = isDoyel ? "doyel-theme" : isOmkar ? "omkar-theme" : "";
 
   return (
-    <div className={`min-h-screen bg-background relative ${themeClass}`}>
+    <div className={`min-h-screen bg-background relative overflow-hidden ${themeClass}`}>
       <RainEffect />
       <FloatingOrbs />
       <Navigation />
+
+      {isDoyel && (
+        <>
+          <PlayingCardAccent rank="A" suit="♠" rotate={-12} className="top-32 -left-6 md:left-8 opacity-80" />
+          <PlayingCardAccent rank="K" suit="♥" rotate={15} className="top-[40%] -right-6 md:right-10 opacity-80" />
+          <PlayingCardAccent rank="Q" suit="♦" rotate={-8} className="top-[70%] left-4 md:left-16 opacity-70" />
+          <PlayingCardAccent rank="J" suit="♣" rotate={20} className="bottom-32 -right-4 md:right-12 opacity-70" />
+        </>
+      )}
 
       <main className="pt-24 pb-20 relative z-10">
         {/* Back link */}
