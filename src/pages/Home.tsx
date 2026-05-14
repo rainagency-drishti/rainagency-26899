@@ -14,8 +14,7 @@ import { ArrowRight, Sparkles, Layers, Zap, Palette, Globe, ChevronDown } from "
 import { motion, AnimatePresence } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { supabase } from "@/integrations/supabase/client";
-import rainLogoDark from "@/assets/rain-logo.png";
-import rainLogoLight from "@/assets/rain-logo-hero-light.png";
+import rainLogo from "@/assets/rain-logo.png";
 
 interface Project {
   id: string;
