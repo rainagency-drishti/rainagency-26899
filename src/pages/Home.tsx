@@ -144,7 +144,6 @@ const Home = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isDark, setIsDark] = useState(true);
 
   useScrollAnimation(heroRef);
   useScrollAnimation(servicesRef);
@@ -153,21 +152,6 @@ const Home = () => {
 
   useEffect(() => {
     fetchFeaturedProjects();
-    
-    // Check initial theme
-    const checkTheme = () => {
-      setIsDark(document.documentElement.classList.contains('dark'));
-    };
-    checkTheme();
-    
-    // Watch for theme changes
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, { 
-      attributes: true, 
-      attributeFilter: ['class'] 
-    });
-    
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
