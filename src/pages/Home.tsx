@@ -225,7 +225,7 @@ const Home = () => {
   const marqueeItems = ["Creative Direction", "Brand Strategy", "Artist Development", "PR & Media", "Content Strategy", "Social Media", "Visual Production", "Storytelling"];
 
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
+    <div className="dark min-h-screen bg-background overflow-hidden">
       <RainEffect />
       <Navigation />
 
@@ -260,7 +260,7 @@ const Home = () => {
               </div>
               <div className="relative z-10 w-full max-w-2xl flex justify-center items-center">
                 <img 
-                  src={isDark ? rainLogoDark : rainLogoLight}
+                  src={rainLogo}
                   alt="RAIN - Digital-first strategy + design agency"
                   className="w-full h-auto animate-scale-in object-contain"
                 />
