@@ -14,8 +14,7 @@ import { ArrowRight, Sparkles, Layers, Zap, Palette, Globe, ChevronDown } from "
 import { motion, AnimatePresence } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { supabase } from "@/integrations/supabase/client";
-import rainLogoDark from "@/assets/rain-logo.png";
-import rainLogoLight from "@/assets/rain-logo-hero-light.png";
+import rainLogo from "@/assets/rain-logo.png";
 
 interface Project {
   id: string;
@@ -145,7 +144,6 @@ const Home = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isDark, setIsDark] = useState(true);
 
   useScrollAnimation(heroRef);
   useScrollAnimation(servicesRef);
@@ -154,21 +152,6 @@ const Home = () => {
 
   useEffect(() => {
     fetchFeaturedProjects();
-    
-    // Check initial theme
-    const checkTheme = () => {
-      setIsDark(document.documentElement.classList.contains('dark'));
-    };
-    checkTheme();
-    
-    // Watch for theme changes
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, { 
-      attributes: true, 
-      attributeFilter: ['class'] 
-    });
-    
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -242,7 +225,7 @@ const Home = () => {
   const marqueeItems = ["Creative Direction", "Brand Strategy", "Artist Development", "PR & Media", "Content Strategy", "Social Media", "Visual Production", "Storytelling"];
 
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
+    <div className="dark min-h-screen bg-background overflow-hidden">
       <RainEffect />
       <Navigation />
 
@@ -277,7 +260,7 @@ const Home = () => {
               </div>
               <div className="relative z-10 w-full max-w-2xl flex justify-center items-center">
                 <img 
-                  src={isDark ? rainLogoDark : rainLogoLight}
+                  src={rainLogo}
                   alt="RAIN - Digital-first strategy + design agency"
                   className="w-full h-auto animate-scale-in object-contain"
                 />
