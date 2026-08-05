@@ -457,3 +457,46 @@ All colors MUST be HSL.
   --gradient-hero: linear-gradient(180deg, hsl(40 27% 79%) 0%, hsl(40 22% 73%) 100%);
   --gradient-card: linear-gradient(135deg, hsl(40 22% 75%) 0%, hsl(40 18% 70%) 100%);
 }
+
+/* Advik brand theme override */
+.advik-theme {
+  --background: 222 27% 19%;
+  --foreground: 30 20% 97%;
+  --card: 220 30% 15%;
+  --card-foreground: 30 20% 97%;
+  --popover: 220 30% 15%;
+  --popover-foreground: 30 20% 97%;
+  --primary: 213 30% 60%;
+  --primary-foreground: 222 27% 12%;
+  --secondary: 212 48% 32%;
+  --secondary-foreground: 30 20% 97%;
+  --muted: 220 25% 24%;
+  --muted-foreground: 213 25% 72%;
+  --accent: 341 100% 28%;
+  --accent-foreground: 30 20% 97%;
+  --border: 212 30% 30%;
+  --input: 220 25% 24%;
+  --ring: 213 30% 60%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+.advik-theme .font-display,
+.advik-theme h1,
+.advik-theme h2,
+.advik-theme h3 {
+  font-family: 'Tenor Sans', 'Alegreya Sans', sans-serif !important;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+.advik-theme p,
+.advik-theme li,
+.advik-theme span,
+.advik-theme a {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+.advik-theme {
+  --gradient-text: linear-gradient(135deg, hsl(30 20% 97%) 0%, hsl(213 30% 60%) 100%);
+  --gradient-hero: linear-gradient(180deg, hsl(222 27% 19%) 0%, hsl(220 30% 15%) 100%);
+  --gradient-card: linear-gradient(135deg, hsl(220 30% 17%) 0%, hsl(220 25% 24%) 100%);
+}
