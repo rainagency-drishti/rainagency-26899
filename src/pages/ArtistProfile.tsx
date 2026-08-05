@@ -70,6 +70,26 @@ const artists: Record<string, Artist> = {
       { title: "TBD", year: "Coming Soon", type: "Single", description: "The next chapter. Coming soon." },
     ],
   },
+  "advik": {
+    slug: "advik",
+    name: "advik",
+    tagline: "music that catches you mid-feeling, before it's had time to resolve into something tidy.",
+    bio: [
+      "advik writes raw, image-first songs. they're the sound of someone still inside a moment, processing it in real time while an indifferent world keeps moving around him.",
+      "most artists in this lane write the resolved version of a feeling, looking back on it, already made sense of it. advik writes the version still in motion. present tense, unedited, still happening.",
+      "his music should feel like passing a stranger mid-conversation with themselves and getting let in on it for three minutes before the world pulls you both back into motion.",
+      "rain built his brand identity from the ground up: positioning, visual world, and creative direction, so everything he releases feels as unresolved and honest as the writing itself.",
+    ],
+    disciplines: ["Songwriting", "Vocal Performance", "Acoustic / Confessional", "Guitar", "Creative Direction"],
+    links: [
+      { label: "Instagram", href: "https://www.instagram.com/rainpresents/", icon: Instagram },
+      { label: "TikTok", href: "https://www.tiktok.com/@rain.presents", icon: TikTokIcon },
+      { label: "Listen", href: "#", icon: Music },
+    ],
+    selectedWork: [
+      { title: "Heart Attack", year: "2026", type: "Single", description: "his next release. a song that stays inside the moment instead of explaining it. branding, visuals, and rollout being built by rain." },
+    ],
+  },
 };
 
 const ArtistProfile = () => {
