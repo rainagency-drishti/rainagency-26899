@@ -116,7 +116,9 @@ const ArtistProfile = () => {
 
   const isDoyel = artist.slug === "doyel-das";
   const isOmkar = artist.slug === "omkar-shanbhag";
-  const themeClass = isDoyel ? "doyel-theme" : isOmkar ? "omkar-theme" : "";
+  const isAdvik = artist.slug === "advik";
+  const themeClass = isDoyel ? "doyel-theme" : isOmkar ? "omkar-theme" : isAdvik ? "advik-theme" : "";
+  const accentText = isDoyel ? "text-[#a51212]" : isAdvik ? "text-[#7A96B8]" : "text-[#7c4b36]";
 
   return (
     <div className={`min-h-screen bg-background relative overflow-hidden ${themeClass}`}>
@@ -142,13 +144,13 @@ const ArtistProfile = () => {
         {/* Hero */}
         <section className="container mx-auto px-6 pt-12 pb-20">
           <div className="max-w-4xl">
-            <p className={`${isDoyel ? "text-xl font-extrabold" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6 text-xl font-bold ${isDoyel ? "text-[#a51212]" : "text-[#7c4b36]"}`}>
+            <p className={`${isDoyel ? "text-xl font-extrabold" : "text-sm"} uppercase tracking-[0.3em] text-accent mb-6 text-xl font-bold ${accentText}`}>
               Artist
             </p>
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-[0.9] text-gradient lg:text-9xl">
               {artist.name}
             </h1>
-            <p className={`text-xl md:text-2xl text-muted-foreground italic max-w-2xl leading-relaxed font-semibold ${isDoyel ? "text-[#a51212]" : "text-[#7c4b36]"}`}>
+            <p className={`text-xl md:text-2xl text-muted-foreground italic max-w-2xl leading-relaxed font-semibold ${accentText}`}>
               {artist.tagline}
             </p>
           </div>
@@ -158,7 +160,7 @@ const ArtistProfile = () => {
         <section className="container mx-auto px-6 pb-24">
           <div className="grid lg:grid-cols-3 gap-12 max-w-6xl">
             <div className="lg:col-span-2 space-y-6">
-               <h2 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold ${isDoyel ? "text-xl text-[#a51212]" : "text-lg text-[#7c4b36]"}`}>
+               <h2 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold ${isDoyel ? "text-xl" : "text-lg"} ${accentText}`}>
                 PROFILE
               </h2>
               {artist.bio.map((para, i) => (
@@ -170,7 +172,7 @@ const ArtistProfile = () => {
 
             <aside className="space-y-8">
               <div>
-                 <h3 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl ${isDoyel ? "text-[#a51212]" : "text-[#7c4b36]"}`}>
+                 <h3 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl ${accentText}`}>
                   DISCIPLINES
                 </h3>
                 <ul className="space-y-2 text-lg">
@@ -184,7 +186,7 @@ const ArtistProfile = () => {
               </div>
 
               <div>
-                 <h3 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl ${isDoyel ? "text-[#a51212]" : "text-[#7c4b36]"}`}>
+                 <h3 className={`uppercase tracking-[0.2em] text-muted-foreground mb-4 font-extrabold text-xl ${accentText}`}>
                   LINKS
                 </h3>
                 <div className="flex flex-col gap-3 text-lg">
